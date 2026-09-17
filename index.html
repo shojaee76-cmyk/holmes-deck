@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en" class="landscape">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The $9 Billion Drop of Blood - a Theranos slideshow</title>
+<meta name="description" content="An 18-slide broadsheet on Theranos and Elizabeth Holmes: the promise, the money, the collapse, the verdict. Every number sourced.">
+<style>
+/* ============ fonts (self-hosted, subset) ============ */
+@font-face{font-family:'Bodoni';src:url('fonts/bodoni-roman.woff2') format('woff2');font-weight:400 900;font-display:block}
+@font-face{font-family:'Bodoni';src:url('fonts/bodoni-italic.woff2') format('woff2');font-weight:400 900;font-style:italic;font-display:block}
+@font-face{font-family:'SourceSerif';src:url('fonts/sourceserif-roman.woff2') format('woff2');font-weight:200 900;font-display:block}
+@font-face{font-family:'SourceSerif';src:url('fonts/sourceserif-italic.woff2') format('woff2');font-weight:200 900;font-style:italic;font-display:block}
+@font-face{font-family:'PlexMono';src:url('fonts/ibmplexmono-400.woff2') format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'PlexMono';src:url('fonts/ibmplexmono-600.woff2') format('woff2');font-weight:600;font-display:block}
+
+/* ============ tokens ============ */
+:root{
+  --ink:#14130f; --ink2:#4a453c; --ink3:#8a8375;
+  --rule:#b3ab9c; --rule2:#d8d3c7; --paper:#f6f4ee; --paper2:#efece3;
+  --red:#a31621; --mark:#f0dca0;
+  /* type ladder */
+  --t-name:60px; --t-h1:63px; --t-h2:40px; --t-h3:23px; --t-h4:18px;
+  --t-quote:55px; --t-lead:18px; --t-body:15px; --t-small:13px; --t-label:10.5px;
+  --t-num:30px; --t-bignum:74px; --t-cover:54px;
+  --s1:8px; --s2:12px; --s3:16px; --s4:24px; --s5:32px; --s6:48px;
+  --pad:44px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#2a2823;font-family:'SourceSerif',Georgia,serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+html.portrait body{overflow-y:auto}
+
+/* ============ stage ============ */
+.stage{position:relative;margin:0 auto}
+html.landscape .stage{width:1600px;height:900px;transform:scale(var(--fit,1));transform-origin:50% 50%;
+  box-shadow:0 30px 90px rgba(0,0,0,.55)}
+html.landscape body{display:flex;align-items:center;justify-content:center}
+html.portrait .stage{width:100%;max-width:560px;min-height:100dvh;transform:none;box-shadow:none}
+html.portrait{background:#f6f4ee}
+html.portrait body{background:var(--paper)}
+
+/* ============ slide ============ */
+.slide{position:absolute;inset:0;background:var(--paper);overflow:hidden}
+html.portrait .slide{position:relative;inset:auto;min-height:100dvh;overflow:visible}
+html.landscape .slide{opacity:0;pointer-events:none;visibility:hidden}
+html.landscape .slide.on{opacity:1;pointer-events:auto;visibility:visible}
+html.portrait .slide{display:none}
+html.portrait .slide.on{display:block}
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:40;opacity:.15;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='0.55'/></svg>")}
+.paper{position:relative;z-index:2;height:100%;padding:var(--pad);display:flex;flex-direction:column}
+html.portrait .paper{height:auto;min-height:100dvh;padding:24px 20px 30px}
+
+/* ============ chrome ============ */
+.runhead{display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink2);padding-bottom:7px}
+.runhead .rh-sec{color:var(--red);font-weight:600}
+.runhead .rh-mid{color:var(--ink3)}
+.hr-ink{height:3px;background:var(--ink)}
+.hr-thin{height:1px;background:var(--rule);margin-top:3px}
+.content{flex:1;padding-top:var(--s4);min-height:0;position:relative}
+.boxscore{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:3px solid var(--ink);
+  margin-top:var(--s3);padding-top:9px}
+.boxscore div{padding:0 16px;border-right:1px solid var(--rule)}
+.boxscore div:first-child{padding-left:0}
+.boxscore div:last-child{border-right:0}
+.boxscore .n{font-family:'Bodoni',Georgia,serif;font-weight:700;font-size:var(--t-num);line-height:1}
+.boxscore .l{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink2);margin-top:5px;min-height:2.7em}
+.pull{margin-top:24px;border-top:3px solid var(--ink);padding-top:10px;display:flex;align-items:baseline;gap:16px}
+.pull .pn{font-family:'Bodoni',Georgia,serif;font-weight:800;font-size:44px;line-height:1;letter-spacing:-.02em}
+.pull .pl{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);line-height:1.6}
+.axis{position:relative;border-bottom:3px solid var(--ink)}
+.axis .grid{position:absolute;left:0;right:0;top:0;border-top:1px dashed var(--rule);font-family:'PlexMono',monospace;font-size:var(--t-label);color:var(--ink3);letter-spacing:.12em;text-transform:uppercase;padding-top:2px}
+.pager{display:flex;justify-content:space-between;align-items:center;margin-top:var(--s1);
+  font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);min-height:14px}
+.pager .pg{color:var(--ink2)}
+.pager .pg b{color:var(--red);font-weight:600}
+
+/* ============ shared type ============ */
+h1,h2,h3{font-family:'Bodoni',Georgia,serif;font-weight:800;letter-spacing:-.015em}
+h1{font-size:var(--t-h1);line-height:.96}
+h2{font-size:var(--t-h2);line-height:1.02}
+h3{font-size:var(--t-h3);line-height:1.12;font-weight:700}
+em{font-style:italic}
+.kicker{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);margin-bottom:9px}
+.kicker.ink{color:var(--ink2)}
+.standfirst{font-size:var(--t-lead);line-height:1.42;color:#25221c}
+.standfirst b,.body b,li b{background:var(--mark);padding:0 2px}
+.body{font-size:var(--t-body);line-height:1.44;color:#28241d}
+.note{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.08em;color:var(--ink2);
+  line-height:1.6;text-transform:uppercase}
+.tag{display:inline-block;font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.24em;
+  text-transform:uppercase;border:2px solid var(--red);color:var(--red);padding:4px 9px}
+.rule-soft{height:1px;background:var(--rule);margin:var(--s3) 0}
+
+/* ============ layouts ============ */
+.split{display:grid;grid-template-columns:1.58fr minmax(0,1fr);gap:0;height:100%}
+.split .main{padding-right:var(--s5);border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center}
+.split .side{padding-left:var(--s5);display:flex;flex-direction:column;gap:var(--s3);justify-content:space-between}
+.side .blk{border-top:3px solid var(--ink);padding-top:8px}
+.side .blk .lbl{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--red);margin-bottom:5px}
+.side .blk .txt{font-size:var(--t-small);line-height:1.45;color:#2b271f}
+.side .blk .big{font-family:'Bodoni',Georgia,serif;font-weight:700;font-size:26px;line-height:1}
+
+.csrc{margin-top:auto;border-top:1px solid var(--rule);padding-top:6px;font-family:'PlexMono',monospace;
+  font-size:var(--t-label);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.strip{margin-top:10px;border-top:3px solid var(--ink);padding-top:10px;
+  display:flex;align-items:baseline;gap:20px;justify-content:space-between}
+.strip .st{font-family:'Bodoni',Georgia,serif;font-style:italic;font-weight:700;font-size:26px;line-height:1.15;max-width:1100px}
+.strip .sw{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);text-align:right;white-space:nowrap}
+.rail{display:flex;border-top:1px solid var(--rule);border-bottom:3px solid var(--ink);margin-top:12px}
+.rail .rb{flex:1;padding:7px 12px 8px;border-right:1px solid var(--rule)}
+.rail .rb:last-child{border-right:0}
+.rail .rb .i{font-family:'PlexMono',monospace;font-size:var(--t-label);color:var(--red);letter-spacing:.18em}
+.rail .rb .t{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);margin-top:5px}
+.rail .rb .d{font-size:11.5px;line-height:1.3;color:var(--ink2);margin-top:4px}
+.srcbox{border:1px solid var(--rule);background:var(--paper2);padding:11px 14px;margin-top:var(--s3)}
+.srcbox .sh{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);margin-bottom:6px}
+.srcbox p{font-family:'PlexMono',monospace;font-size:11px;line-height:1.7;color:var(--ink2);letter-spacing:.02em}
+.chartgrid{display:grid;grid-template-columns:1.3fr minmax(0,1fr);gap:44px;flex:1;min-height:0}
+.photo{margin:0}
+.photo img{display:block;width:100%;height:auto;border:1px solid var(--rule);filter:saturate(.88) contrast(1.04)}
+.photo figcaption{font-family:'PlexMono',monospace;font-size:9.5px;line-height:1.45;color:var(--ink2);margin-top:5px}
+.photo .cred{color:var(--ink3)}
+.lead-photo img{aspect-ratio:16/9;object-fit:cover}
+.covergrid .photo img{aspect-ratio:16/10;object-fit:cover}
+.headphoto{height:100%;display:flex;flex-direction:column}
+.headphoto img{height:170px;width:100%;object-fit:cover;border:1px solid var(--rule);filter:saturate(.88) contrast(1.04)}
+.headphoto figcaption{font-family:'PlexMono',monospace;font-size:9.5px;line-height:1.4;color:var(--ink2);margin-top:5px}
+.crgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 34px}
+.cr{border-top:1px solid var(--rule);padding-top:6px}
+.cr .crc{font-size:13px;line-height:1.35}
+.cr .crl{font-family:'PlexMono',monospace;font-size:9px;line-height:1.4;color:var(--ink2);margin-top:2px;overflow-wrap:anywhere}
+.statband{border:1px solid var(--rule);background:var(--paper2);display:flex;align-items:stretch}
+.statband .sb{flex:1;padding:9px 12px;border-right:1px solid var(--rule)}
+.statband .sb:last-child{border-right:0}
+.statband .sbn{font-family:'Bodoni',Georgia,serif;font-weight:800;font-size:26px;line-height:1}
+.statband .sbl{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink2);margin-top:5px;line-height:1.5}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;flex:1;min-height:0}
+.cols .col{padding:0 18px;border-right:1px solid var(--rule);display:flex;flex-direction:column}
+.cols .body{font-size:15.3px;line-height:1.42}
+.cols .col::after{content:'';margin-top:auto;height:1px;background:var(--rule2)}
+.cols .col:first-child{padding-left:0}
+.cols .col:last-child{border-right:0;padding-right:0}
+
+.head-row{display:grid;grid-template-columns:1.7fr minmax(0,1fr);align-items:end;gap:var(--s5);margin-bottom:var(--s3)}
+
+.covergrid{display:grid;grid-template-columns:1.6fr minmax(0,1fr);gap:44px;align-items:center}
+.six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 26px}
+.six .body{font-size:15px;line-height:1.5}
+.inkblock{background:
+  radial-gradient(var(--ink) 1.35px, transparent 1.4px), radial-gradient(var(--red) 1.35px, transparent 1.4px);
+  background-size:7px 7px,7px 7px;background-position:0 0,3.5px 3.5px;opacity:.5}
+
+.numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:0;height:100%}
+.numbers .numline{display:block}
+.numbers .cell{padding:16px 26px 14px 0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:flex;flex-direction:column;justify-content:center;min-width:0}
+.numbers .cell:nth-child(2n){border-right:0;padding-right:0;padding-left:26px}
+.numbers .cell:nth-child(n+3){border-bottom:0;padding-top:22px}
+.numbers .cell .n,.numbers .cell .l,.numbers .cell .body,.numbers .cell .csrc{max-width:640px}
+.numbers .cell .n{font-size:var(--t-bignum)}
+.numbers .n{font-family:'Bodoni',Georgia,serif;font-weight:800;font-size:var(--t-bignum);line-height:.92;overflow-wrap:break-word;
+  letter-spacing:-.03em}
+.numbers .l{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);margin-top:10px;line-height:1.6}
+.numbers .body{margin-top:10px;font-size:var(--t-small)}
+
+table.tally{width:100%;border-collapse:collapse}
+table.tally th{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink2);text-align:left;padding:0 12px 7px 0;border-bottom:3px solid var(--ink);font-weight:400}
+table.tally td{padding:19px 12px 19px 0;border-bottom:1px solid var(--rule);vertical-align:middle}
+table.tally td.ch{font-family:'Bodoni',Georgia,serif;font-weight:700;font-size:21px;line-height:1.1}
+table.tally td.cn{font-family:'PlexMono',monospace;font-size:var(--t-small);color:var(--ink2);width:70px}
+table.tally td.vd{width:250px;vertical-align:middle}
+.stamp{display:inline-block;min-width:158px;text-align:center;font-family:'PlexMono',monospace;font-size:11px;letter-spacing:.26em;
+  text-transform:uppercase;border:2px solid currentColor;padding:4px 9px;color:var(--red)}
+.stamp.grey{color:var(--ink3)}
+.stamp.plain{color:var(--ink2)}
+
+.tl{display:flex;align-items:stretch;gap:0;height:100%;padding-top:var(--s5)}
+.tl .it{flex:1;padding:0 14px;border-left:1px solid var(--rule);display:flex;flex-direction:column}
+.tl .it:first-child{border-left:0;padding-left:0}
+.tl .yr{font-family:'Bodoni',Georgia,serif;font-weight:700;font-size:var(--t-num);line-height:1}
+.tl .bar{height:6px;background:var(--ink);margin:9px 0 10px}
+.tl .it.hot .bar{background:var(--red)}
+.tl h4{font-family:'SourceSerif',Georgia,serif;font-weight:700;font-size:var(--t-h4);line-height:1.2;margin-bottom:5px}
+.tl .tx{font-size:var(--t-small);line-height:1.42;color:#2b271f}
+
+.plot{display:flex;align-items:flex-end;gap:var(--s5);height:100%;padding-bottom:6px}
+.plot .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.plot .bar{width:100%;background:var(--ink);height:0;transition:height 1s cubic-bezier(.3,.9,.2,1);
+  transition-delay:calc(var(--d,0)*1ms)}
+.plot .b.hot .bar{background:var(--red)}
+.plot .val{font-family:'Bodoni',Georgia,serif;font-weight:800;font-size:36px;line-height:1;margin-bottom:8px}
+.plot .lab{font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);margin-top:9px;line-height:1.5}
+.counter{font-family:'Bodoni',Georgia,serif;font-weight:800;font-size:64px;letter-spacing:-.03em;line-height:1}
+.counter.dead{color:var(--red)}
+
+/* ============ ui ============ */
+.ui{position:fixed;inset:0;pointer-events:none;z-index:100}
+.ui .zone{position:absolute;top:0;bottom:0;width:16%;pointer-events:auto;cursor:pointer}
+.ui .zone.l{left:0}.ui .zone.r{right:0}
+html.portrait .ui .zone{width:12%}
+.hintbar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:18px;
+  font-family:'PlexMono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(246,244,238,.62);padding:8px;z-index:100;pointer-events:none;background:linear-gradient(transparent,rgba(20,19,15,.55))}
+html.portrait .hintbar{position:sticky;color:var(--ink2);background:none;padding:10px 6px 0}
+.progress{position:fixed;left:0;right:0;bottom:0;height:3px;background:rgba(20,19,15,.25);z-index:101}
+.progress i{display:block;height:100%;background:var(--red);width:0;transition:width .35s ease}
+.playbar{position:fixed;left:0;top:0;height:2px;background:var(--mark);width:0;z-index:101}
+.overlay{position:fixed;inset:0;background:var(--paper);z-index:120;display:none;overflow:auto;padding:38px 44px}
+.overlay.on{display:block}
+.overlay h2{font-family:'Bodoni',Georgia,serif;font-size:34px;margin-bottom:4px}
+.overlay .sub{font-family:'PlexMono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink2);margin-bottom:24px}
+.ovgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--ink)}
+.ovgrid a{display:flex;gap:13px;align-items:baseline;padding:11px 16px 11px 0;border-bottom:1px solid var(--rule);
+  border-right:1px solid var(--rule);text-decoration:none;color:var(--ink)}
+.ovgrid a:hover{background:var(--paper2)}
+.ovgrid .no{font-family:'Bodoni',Georgia,serif;font-weight:700;font-size:22px;color:var(--red);min-width:34px}
+.ovgrid .tt{font-size:15px;line-height:1.3}
+.ovgrid .tt i{display:block;font-family:'PlexMono',monospace;font-style:normal;font-size:10px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-top:3px}
+.helpgrid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 20px;font-size:15px;max-width:720px}
+.helpgrid b{font-family:'PlexMono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--red);font-weight:600}
+
+.lang{position:fixed;top:10px;right:12px;z-index:130;font-family:'PlexMono',monospace;font-size:11px;
+  background:var(--paper);border:1px solid var(--rule);padding:3px 9px;color:var(--ink);text-decoration:none;direction:rtl}
+.lang:hover{background:var(--paper2)}
+
+/* ============ animation ============ */
+[data-an]{opacity:0;transform:translateY(15px);
+  transition:opacity .5s ease,transform .55s cubic-bezier(.2,.75,.2,1);
+  transition-delay:calc(var(--d,0) * 1ms)}
+.on [data-an]{opacity:1;transform:none}
+[data-draw]{transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .6s cubic-bezier(.45,.1,.2,1);transition-delay:calc(var(--d,0) * 1ms)}
+.on [data-draw]{transform:none}
+[data-stamp]{opacity:0;transform:scale(1.55) rotate(-13deg);
+  transition:opacity .2s ease,transform .36s cubic-bezier(.2,1.4,.4,1);
+  transition-delay:calc(var(--d,0) * 1ms)}
+.on [data-stamp]{opacity:1;transform:rotate(-4deg)}
+.plot .on .bar,.on .plot .bar{height:var(--h)}
+html.reduce [data-an],html.reduce [data-draw],html.reduce [data-stamp]{opacity:1;transform:none;transition:none}
+html.reduce .plot .bar{transition:none}
+
+@media print{
+  html,body{background:#fff;overflow:visible}
+  .ui,.hintbar,.progress,.playbar,.overlay{display:none!important}
+  html.landscape .stage{transform:none;box-shadow:none;width:100%;height:auto}
+  .slide{position:relative;opacity:1!important;visibility:visible!important;display:block!important;
+    height:100vh;page-break-after:always}
+  html.portrait .slide{min-height:auto}
+}
+
+/* ============ portrait reflow (phones) ============ */
+html.portrait{
+  --t-name:30px; --t-h1:33px; --t-h2:27px; --t-h3:19px; --t-h4:16px;
+  --t-quote:26px; --t-lead:15.5px; --t-body:14.5px; --t-small:13.5px; --t-label:9px;
+  --t-num:20px; --t-bignum:44px; --t-cover:30px;
+  --s4:16px; --s5:18px; --s6:24px; --pad:20px;
+}
+html.portrait .runhead{padding-bottom:5px}
+html.portrait .split{grid-template-columns:1fr;height:auto;gap:0}
+html.portrait .split .main{padding-right:0;border-right:0;padding-bottom:var(--s4);justify-content:flex-start}
+html.portrait .pull{margin-top:16px}
+html.portrait .pull .pn{font-size:32px}
+html.portrait .split .side{padding-left:0;border-top:1px solid var(--rule);padding-top:var(--s3)}
+html.portrait .crgrid{grid-template-columns:1fr;gap:10px}
+html.portrait .headphoto img{height:210px}
+html.portrait .statband{flex-direction:column}
+html.portrait .statband .sb{border-right:0;border-bottom:1px solid var(--rule);padding:8px 10px}
+html.portrait .statband .sb:last-child{border-bottom:0}
+html.portrait .statband .sbn{font-size:22px}
+html.portrait .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;height:auto}
+html.portrait .cols .col{padding:0 0 var(--s3)}
+html.portrait .cols .col:nth-child(even){padding-left:16px;border-left:1px solid var(--rule)}
+html.portrait .cols .col{padding:0 0 var(--s3);border-right:0;border-bottom:1px solid var(--rule);
+  margin-bottom:var(--s3)}
+html.portrait .cols .col:last-child{border-bottom:0;margin-bottom:0}
+html.portrait .head-row{grid-template-columns:1fr;gap:var(--s2);align-items:start}
+html.portrait .covergrid{grid-template-columns:minmax(0,1fr);gap:18px;align-items:start}
+html.portrait .covergrid>*{min-width:0}
+html.portrait .six{grid-template-columns:1fr;gap:14px}
+html.portrait .numbers{grid-template-columns:1fr;height:auto;gap:0}
+html.portrait .strip{flex-direction:column;gap:6px}
+html.portrait .strip .st{font-size:20px}
+html.portrait .strip .sw{text-align:left;white-space:normal}
+html.portrait .rail{flex-wrap:wrap}
+html.portrait .rail .rb{flex:1 1 50%;border-bottom:1px solid var(--rule)}
+html.portrait .csrc{margin-top:10px}
+html.portrait .numbers .cell{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"n l" "n b";
+  gap:2px 14px;align-items:start;padding:0 0 11px;border-right:0;border-bottom:1px solid var(--rule);
+  margin-bottom:11px}
+html.portrait .numbers .cell .n{grid-area:n;min-width:104px}
+html.portrait .numbers .cell .l{grid-area:l;margin-top:0}
+html.portrait .numbers .cell .body{grid-area:b;margin-top:2px!important}
+html.portrait table.tally th{padding:0 8px 6px 0;letter-spacing:.12em}
+html.portrait table.tally td{padding:8px 8px 8px 0}
+html.portrait table.tally td.ch{font-size:17px}
+html.portrait table.tally td.cn{width:56px}
+html.portrait table.tally td.vd{width:110px}
+html.portrait table.tally .stamp{min-width:0;font-size:9.5px;letter-spacing:.12em;padding:3px 6px;border-width:1.5px}
+html.portrait .plot .bar{max-height:110px}
+html.portrait .axis .grid{font-size:9px}
+html.portrait .chartgrid{grid-template-columns:1fr;gap:20px;flex:none}
+html.portrait .chartgrid>div:last-child{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:16px}
+html.portrait .plot .lab{font-size:9px}
+html.portrait .srcbox p{font-size:10px;line-height:1.62}
+html.portrait .boxscore{grid-template-columns:1fr 1fr;gap:10px 0}
+html.portrait .boxscore div{border-right:0;padding:0 10px 0 0}
+html.portrait .tl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;height:auto;padding-top:var(--s3)}
+html.portrait .tl .it:nth-child(even){padding-left:16px;border-left:1px solid var(--rule)}
+html.portrait .tl .it{border-left:0;border-top:1px solid var(--rule);padding:12px 0 0;margin-bottom:14px}
+html.portrait .tl .it:first-child{border-top:3px solid var(--ink)}
+html.portrait .tl .bar{height:4px;margin:7px 0 8px}
+html.portrait .plot{flex-direction:column;height:auto;gap:var(--s3);align-items:stretch}
+html.portrait .plot .b{height:auto}
+html.portrait .plot .bar{max-height:none}
+html.portrait .counter{font-size:38px}
+html.portrait h1{font-size:var(--t-h1)}
+html.portrait .ovgrid{grid-template-columns:1fr}
+html.portrait .overlay{padding:22px 18px}
+html.portrait .helpgrid{grid-template-columns:1fr;gap:4px 0}
+</style>
+</head>
+<body>
+<a class="lang" href="https://nine-billion-fa.surge.sh/" title="نسخه فارسی">فارسی</a>
+<div class="stage" id="stage"></div>
+
+<div class="ui" id="ui">
+  <div class="zone l" id="zoneL" title="Previous"></div>
+  <div class="zone r" id="zoneR" title="Next"></div>
+</div>
+<div class="playbar" id="playbar"></div>
+<div class="progress"><i id="progfill"></i></div>
+<div class="hintbar" id="hint">
+  <span>← → arrows</span><span>o contents</span><span>p autoplay</span><span>f fullscreen</span><span>? keys</span>
+</div>
+
+<div class="overlay" id="contents">
+  <h2>Contents</h2>
+  <div class="sub">The $9 Billion Drop of Blood / 18 pages</div>
+  <div class="ovgrid" id="ovgrid"></div>
+</div>
+<div class="overlay" id="help">
+  <h2>Keys</h2>
+  <div class="sub">This deck works with keys, clicks, swipes and scroll</div>
+  <div class="helpgrid">
+    <b>Right / Space</b><span>next page</span>
+    <b>Left</b><span>previous page</span>
+    <b>Home / End</b><span>first / last page</span>
+    <b>O</b><span>contents</span>
+    <b>P</b><span>autoplay (14s a page)</span>
+    <b>F</b><span>fullscreen</span>
+    <b>Esc</b><span>close this</span>
+    <b>Click</b><span>right third forward, left third back</span>
+    <b>Swipe</b><span>either way, on a phone</span>
+    <b>Print</b><span>one page per sheet</span>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* =======================================================================
+   SOURCES for every figure in this deck:
+   DOJ (US v. Elizabeth Holmes, et al. press releases), SEC (March 2018 charge
+   and settlement), CMS (2016 inspection letters and sanctions), The Wall
+   Street Journal (Carreyrou, Oct 2015 onward, incl. the May 2018 $600M
+   analysis), Bureau of Prisons (projected release), Reuters / AP / USA Today /
+   Britannica (Jan-Sept 2026 reporting), and the consolidated Wikipedia record
+   on Theranos and Elizabeth Holmes (retrieved 17 Sept 2026).
+   ======================================================================= */
+
+const SCORE = [
+  {n:'$945M', l:'raised from investors'},
+  {n:'$9.0B', l:'peak valuation, 2015'},
+  {n:'4 of 11', l:'counts convicted, Jan 2022'},
+  {n:'123 mo', l:'sentence, cut Mar 2026'}
+];
+
+/* photographs used in this deck, with their credit lines (see the last page) */
+const PHOTOS = [
+ {file:"cover-holmes.jpg", en:"Elizabeth Holmes, 2014", by:"Max Morse / TechCrunch", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:Elizabeth_Holmes_2014_(cropped).jpg"},
+ {file:"promise-2016.jpg", en:"Elizabeth Holmes, 2016", by:"Tali Mackay", lic:"CC BY-SA 4.0",
+  page:"commons.wikimedia.org/wiki/File:Elizabeth_Holmes_2016.jpeg"},
+ {file:"board-2013.jpg", en:"A 2013 meeting with William Perry and Ashton Carter", by:"US Dept. of Defense", lic:"Public domain",
+  page:"commons.wikimedia.org/wiki/File:Ashton_B._Carter,_William_Perry,_and_Elizabeth_Holmes_-_130417-D-NI589-215_(8660144172).jpg"},
+ {file:"deals-walgreens.jpg", en:"A Walgreens store", by:"time anchor", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:Local_markets_nlv_walgreens_storefront_2_(5956425119).jpg"},
+ {file:"machine-analyzer.jpg", en:"A conventional laboratory analyser", by:"Dorie Hightower", lic:"Public domain",
+  page:"commons.wikimedia.org/wiki/File:Protein_pattern_analyzer_(1).jpg"},
+ {file:"probe-carreyrou.jpg", en:"John Carreyrou, the reporter who wrote the investigation", by:"kellywritershouse", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:John_Carreyrou_9-12-2019_DSC02013_(48724580882)_(cropped).jpg"},
+ {file:"witness-shultz.jpg", en:"Tyler Shultz, a former Theranos employee", by:"Jay Dixit", lic:"CC BY-SA 4.0",
+  page:"commons.wikimedia.org/wiki/File:Tyler_Shultz_at_the_International_Journalism_Festival_2024_in_Perugia,_Italy,_photo_2.jpg"},
+ {file:"collapse-holmes.jpg", en:"Elizabeth Holmes at TechCrunch Disrupt 2014", by:"Kevin Krejci", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:Elizabeth_Holmes_of_Theranos_(15186113882).jpg"},
+ {file:"reckoning-doj.jpg", en:"The US Department of Justice building", by:"Gunnar Klack", lic:"CC BY-SA 4.0",
+  page:"commons.wikimedia.org/wiki/File:2014-04-04-Robert-F-Kennedy-Department-of-Justice-Building-Washington-DC.jpg"},
+ {file:"sentence-prison.jpg", en:"Federal Prison Camp Bryan, Texas", by:"US Bureau of Prisons", lic:"Public domain",
+  page:"commons.wikimedia.org/wiki/File:FPC_Bryan.jpg"},
+ {file:"patients-needle.jpg", en:"Blood sample tubes (illustrative)", by:"US Marine Corps / Cpl. Daniel Childs", lic:"Public domain",
+  page:"commons.wikimedia.org/wiki/File:Koa_Moana_24-_Blood_Draw_SME_Exchange_(8583256).jpg"}
+];
+
+const SLIDES = [
+/* 1 ------------------------------------------------------------------ */
+{section:'The investigation', type:'cover',
+ nameplate:'The $9 Billion Drop of Blood',
+ sub:'Theranos / Elizabeth Holmes / How a promise about one drop of blood became the decade\u2019s biggest startup fraud',
+ head:'A 19-year-old promised everything.<br><em>The machine never worked.</em>',
+ lead:'In 2003 Elizabeth Holmes dropped out of Stanford to build a device that could run hundreds of medical tests on a single finger prick. Ten years later the company was valued at $9 billion. It could not do the thing it was selling.',
+ photo:{src:"media/cover-holmes.jpg", cap:"Elizabeth Holmes on stage at TechCrunch Disrupt, September 2014.", by:"Photo: Max Morse / TechCrunch, CC BY 2.0", pos:"50% 8%"},
+ foot:'Sources: DOJ / SEC / CMS / WSJ / Bureau of Prisons, September 2026'},
+
+/* 2 ------------------------------------------------------------------ */
+{section:'The promise', type:'lead', kicker:'2003 / Palo Alto, California',
+ head:'The idea that could not work, and the professor who said so',
+ lead:'Holmes pitched running hundreds of tests on a few droplets from a fingertip to <b>Phyllis Gardner</b>, a professor of medicine at Stanford. Gardner told her it was not possible; other medical professors said the same. Holmes did not relent. She found a dean who would back her instead.',
+ side:[
+  {lbl:'The founding', txt:'The company was first called <b>Real-Time Cures</b>, then renamed Theranos, from therapy and diagnosis. It was seeded with her tuition money.'},
+  {lbl:'The pitch', txt:'No needles, no laboratory, no waiting: hundreds of tests from one finger prick, cheaper than any lab.'},
+  {lbl:'The scientist', big:'2003', txt:'First patent application filed that year, for a wearable drug-delivery patch, not for a blood test.'}
+ ],
+ pull:{n:"2003", l:"the year Holmes dropped out of Stanford and founded the company"},
+ photo:{src:"media/promise-2016.jpg", cap:"Elizabeth Holmes in 2016, the year her public image collapsed.", by:"Photo: Tali Mackay, CC BY-SA 4.0", pos:"50% 10%"},
+ foot:'Sources: Wikipedia (Elizabeth Holmes), Bad Blood'},
+
+/* 3 ------------------------------------------------------------------ */
+{section:'The promise', type:'lead', kicker:'2004 to 2013 / stealth mode',
+ head:'Ten years in the dark, and the most impressive board in America',
+ lead:'Theranos ran without a press release or a public website until September 2013. Inside, it was collecting money and names: <b>$6 million</b> by December 2004, more than <b>$92 million</b> in venture capital by the end of 2010, and a board of former cabinet secretaries who had never run a laboratory.',
+ side:[
+  {lbl:'Board', txt:'George Shultz, Henry Kissinger, William Perry, Sam Nunn, Bill Frist, Gary Roughead, Jim Mattis, William Foege, Riley Bechtel, Richard Kovacevich, David Boies.'},
+  {lbl:'What was missing', txt:'Not one director had laboratory medicine experience. The technical advisor was Channing Robertson, a Stanford chemical engineering dean.'},
+  {lbl:'The effect', big:'', txt:'Investors treated the board as evidence that the technology had been checked by serious people.'}
+ ],
+ pull:{n:"$92M", l:"in venture capital raised by the end of 2010, before any product launched"},
+ photo:{src:"media/board-2013.jpg", cap:"A 2013 meeting with William Perry, a Theranos board member, and Ashton Carter.", by:"Photo: US Dept. of Defense, public domain", pos:"50% 45%"},
+ foot:'Sources: Wikipedia (Theranos), Wall Street Journal'},
+
+/* 4 ------------------------------------------------------------------ */
+{section:'The money', type:'numbers', kicker:'2013 to 2016 / what the story was worth',
+ head:'What the story was worth',
+ nums:[
+  {n:'$945M', l:'raised from investors over the life of the company', body:'The SEC charged that more than <b>$700 million</b> of it was raised through false or exaggerated claims.', s:"SEC charge and settlement, March 2018"},,
+  {n:'$9.0B', l:'peak valuation, 2013 to 2014', body:'A private company with no published data, no peer-reviewed research and one approved test.', s:"Forbes 400, 2014"},,
+  {n:'$4.5B', l:'Holmes\u2019 paper net worth, 2015', body:'Forbes named her the youngest and wealthiest self-made female billionaire in the United States.', s:"Forbes, 2015"},,
+  {n:'$0', l:'that net worth, by June 2016', body:'Forbes revised the estimate to nothing. The WSJ later put the cost to business and government leaders at <b>more than $600 million</b>.', s:"Forbes, June 2016 and WSJ, May 2018"}
+ ],
+ foot:'Sources: SEC charging document, Forbes, Wall Street Journal (May 2018)'},
+
+/* 5 ------------------------------------------------------------------ */
+{section:'The promise', type:'lead', kicker:'2013 to 2015 / the deals',
+ head:'The deals that made it look real: 40 Walgreens counters, 800 Safeway clinics',
+ lead:'Walgreens put Theranos collection counters into more than <b>40 stores</b>. Safeway spent <b>$350 million</b> retrofitting 800 locations for clinics that were never used. Cleveland Clinic, Capital Blue Cross and AmeriHealth Caritas signed agreements. GlaxoSmithKline and Pfizer were described as users of the technology; in October 2015 both said they had no active projects with Theranos.',
+ side:[
+  {lbl:'Partners as proof', txt:'The deals were reported as independent validation. None of them included independent verification of the devices.'},
+  {lbl:'The trial clinic', txt:'Safeway\u2019s own in-house trial clinic produced questionable results; the deal was terminated in 2015.'},
+  {lbl:'Later', big:'', txt:'Walgreens terminated in June 2016, sued for $140 million and settled for under $30 million.'}
+ ],
+ pull:{n:"$350M", l:"spent by Safeway building clinics in 800 stores that were never used"},
+ photo:{src:"media/deals-walgreens.jpg", cap:"A Walgreens store; Theranos put collection counters in more than 40 of them.", by:"Photo: time anchor, CC BY 2.0", pos:"50% 70%"},
+ foot:'Sources: Wikipedia (Theranos), Wall Street Journal'},
+
+/* 6 ------------------------------------------------------------------ */
+{section:'The machine', type:'columns', kicker:'What was actually in the box',
+ head:'One device, one approved test, and a lot of other people\u2019s machines',
+ cols:[
+  {k:'The claim', h:'Hundreds of tests from microlitres of blood', p:'The Edison device, later renamed miniLab, was presented as a self-contained laboratory: faster, cheaper and more accurate than a reference lab.', p2:"No peer-reviewed study of the device was ever published, a gap John Ioannidis flagged in JAMA in February 2015."},
+  {k:'The reality', h:'Most testing ran on commercial analyzers', p:'The Wall Street Journal reported in October 2015 that Theranos used conventional machines bought from other manufacturers for most of its testing. In May 2016 the company <b>voided two years of Edison results</b>.', p2:"The Journal also reported that validation reports had been altered, and Theranos voided or corrected about 1% of its results company-wide."},
+  {k:'The one approval', h:'HSV-1, and nothing else', p:'In July 2015 the FDA cleared the fingerstick device for use outside a clinical laboratory for exactly one thing: the <b>herpes simplex virus, type 1</b>. The 200 plus test menu never got that clearance.', p2:"For the rest of the menu the company relied on conventional analysers, and on finger-stick samples that it diluted before testing."},
+  {k:'The demonstration', h:'A lab staged for a visit', p:'When Vice President Joe Biden toured the facility, employees described a <b>fake lab</b> built for the visit. An investor lawsuit alleged Theranos secretly bought lab equipment to run fake demonstrations.', p2:"An investor lawsuit alleged the company had secretly bought commercial lab equipment to stage its demonstrations."}
+ ],
+ stats:[{n:"200+", l:"tests the company claimed it could run on one finger prick"},{n:"1", l:"test the FDA cleared for the fingerstick device outside a lab: HSV-1"},{n:"2 yrs", l:"of Edison results voided in May 2016"}],
+ strip:{t:"Theranos called the Journal’s reporting factually and scientifically erroneous, and promised to publish accuracy data that never came.", w:"company statement, October 2015"},
+ photo:{src:"media/machine-analyzer.jpg", cap:"A conventional laboratory analyser, the kind of machine most Theranos results were run on.", by:"Photo: Dorie Hightower, public domain", pos:"50% 50%"},
+ foot:'Sources: WSJ (Oct 2015), FDA, Wikipedia (Theranos), Bad Blood'},
+
+/* 7 ------------------------------------------------------------------ */
+{section:'The breaking point', type:'quote', kicker:'October 15, 2015',
+ quote:'This is what happens when you work to change things: first they think you are crazy, then they fight you, and then all of a sudden you change the world.',
+ who:'Elizabeth Holmes, on CNBC\u2019s Mad Money',
+ when:'the evening the Journal published',
+ tl:[
+  {yr:'Feb 2015', tx:'John Ioannidis writes in JAMA that no peer-reviewed research from Theranos exists anywhere in the literature.'},
+  {yr:'May 2015', tx:'Eleftherios Diamandis of the University of Toronto concludes in a journal analysis that most of the company\u2019s claims are exaggerated.'},
+  {yr:'Oct 15, 2015', tx:'The Wall Street Journal publishes John Carreyrou\u2019s investigation. Walgreens immediately suspends expansion.'}
+ ],
+ foot:'Sources: JAMA, WSJ, Wikipedia (Theranos)'},
+
+/* 8 ------------------------------------------------------------------ */
+{section:'The breaking point', type:'lead', kicker:'2015 / how it actually broke',
+ head:'A tip, two whistleblowers, and a lawyer sent to stop it',
+ lead:'Carreyrou began a months-long investigation after a tip that the Edison device looked suspicious, then built it out of company documents and two former employees: <b>Tyler Shultz</b>, the grandson of board member George Shultz, and <b>Erika Cheung</b>, who had worked in the lab. When Holmes\u2019 lawyer David Boies learned of the investigation, Theranos went after the Journal, the sources and the whistleblowers with legal and financial threats. The story ran anyway.',
+ side:[
+  {lbl:'Also alleged', txt:'Theranos hired a reputation firm that tried to quietly delete the Journal\u2019s reporting from its Wikipedia article.'},
+  {lbl:'The response', txt:'Holmes called the Journal a tabloid and promised to publish data on the accuracy of the tests. The data never came.'},
+  {lbl:'Insiders', txt:'Employees who raised concerns inside the company described being marginalised or fired.'}
+ ],
+ pull:{n:"Oct 15", l:"2015: the date the Wall Street Journal published the investigation"},
+ photo:{src:"media/probe-carreyrou.jpg", cap:"John Carreyrou, the Wall Street Journal reporter who wrote the investigation.", by:"Photo: kellywritershouse, CC BY 2.0", pos:"50% 15%"},
+ foot:'Sources: WSJ, Bad Blood, Wikipedia (Theranos)'},
+
+/* 9 ------------------------------------------------------------------ */
+{section:'The collapse', type:'numbers', kicker:'May 2016 / what was taken back',
+ head:'What was voided',
+ nums:[
+  {n:'2 years', l:'of Edison test results, voided in May 2016', body:'Patients whose results came off the company\u2019s own device were told the results could not be trusted.', s:"company statement, May 2016"},,
+  {n:'1%', l:'of results voided or corrected company-wide', body:'The figure Theranos itself announced in June 2016, on a national test volume built in two years.', s:"company statement, June 2016"},,
+  {n:'1,500,000', l:'tests sold in Arizona alone', body:'The state alleged Theranos sold them while concealing or misrepresenting important facts about the tests.', s:"Arizona Attorney General, 2017"},,
+  {n:'$4.65M', l:'Arizona settlement, April 2017', body:'Refunds to consumers plus $225,000 in civil fines and legal fees, with a consent decree attached.', s:"Arizona settlement, April 2017"}
+ ],
+ foot:'Sources: WSJ, Arizona Attorney General, Wikipedia (Theranos)'},
+
+/* 10 ----------------------------------------------------------------- */
+{section:'The collapse', type:'columns', kicker:'2016 to 2018 / the end',
+ head:'The regulator, the ban, and the end of the company',
+ cols:[
+  {k:'January 2016', h:'Immediate jeopardy', p:'CMS inspects the Newark, California laboratory and finds it caused <b>immediate jeopardy to patient health and safety</b>, citing a test used to set the dose of the blood thinner warfarin.', p2:"Walgreens suspended testing from that laboratory within days, and Theranos agreed to stop testing at a Capital Blue Cross store in Pennsylvania."},
+  {k:'July 2016', h:'Certificate revoked', p:'CMS revokes the laboratory\u2019s CLIA certificate and bans Holmes from owning, operating or directing a blood-testing service for <b>two years</b>. Walgreens had already walked.', p2:"The FDA separately ordered the company to stop using its nanotainer blood-collection device, one of its core inventions."},
+  {k:'October 2016', h:'Labs closed, 340 laid off', p:'Theranos closes its laboratory operations and wellness centers. Another 155 people go in January 2017 as the last testing site fails a second inspection.', p2:"By then Theranos had voided two years of its own device’s results, and federal prosecutors and the SEC had opened investigations."},
+  {k:'September 2018', h:'Dissolved', p:'The company begins formal dissolution and its remaining cash and assets go to creditors, with the patents and assets transferred to Fortress Investment Group.', p2:"The last employees were let go in August. The remaining cash went to creditors, and the equity holders recovered nothing."}
+ ],
+ stats:[{n:"2 yrs", l:"ban on Holmes owning or running a laboratory, from July 2016"},{n:"340", l:"people laid off in October 2016, another 155 in January 2017"},{n:"$30M", l:"what the Walgreens suit settled for, after seeking $140 million"}],
+ strip:{t:"“I was devastated we did not catch and fix these issues faster,” Holmes said, and promised to rebuild the lab with a new advisory board.", w:"Holmes on the Today Show, 2016"},
+ photo:{src:"media/collapse-holmes.jpg", cap:"Holmes (left) on stage at TechCrunch Disrupt 2014 in San Francisco.", by:"Photo: Kevin Krejci, CC BY 2.0", pos:"50% 40%"},
+ foot:'Sources: CMS, WSJ, Wikipedia (Theranos)'},
+
+/* 11 ----------------------------------------------------------------- */
+{section:'The collapse', type:'chart', kicker:'2014 to 2018 / the arithmetic',
+ head:'Nine billion dollars, and then zero',
+ counterLabel:'Company valuation, on paper, 2015',
+ bars:[
+  {v:9.0,  lab:'2014 to 2015<br>company valuation', show:'$9.0B'},
+  {v:0.0,  lab:'June 2016<br>founder\u2019s net worth', show:'$0', hot:true},
+  {v:0.0,  lab:'September 2018<br>recovery for shareholders', show:'$0', hot:true}
+ ],
+ note:'Investors, partners and creditors lost the money; the equity was worth nothing when the company dissolved. Holmes and Balwani were later ordered to pay $452 million in restitution to victims of the fraud.',
+ foot:'Sources: SEC, Forbes, WSJ, MarketWatch (Fortress deal, Sept 2018)'},
+
+/* 12 ----------------------------------------------------------------- */
+{section:'The reckoning', type:'lead', kicker:'March and June 2018',
+ head:'The SEC called it fraud. Then the Justice Department did.',
+ lead:'In March 2018 the SEC charged Holmes and Balwani with raising more than <b>$700 million</b> on false claims, including that the technology was used by the Department of Defense in combat and that the company would book <b>$100 million in 2014 revenue</b> when it booked about <b>$100,000</b>. Holmes settled without admitting or denying: a <b>$500,000</b> fine, 18.9 million shares returned, and a ten-year ban from officer or director roles at a public company.',
+ side:[
+  {lbl:'June 14, 2018', txt:'A federal grand jury indicts Holmes and Balwani on <b>nine counts of wire fraud and two counts of conspiracy</b> to commit wire fraud. Both plead not guilty.'},
+  {lbl:'The two schemes', txt:'One to defraud investors, and a second to defraud doctors and patients.'},
+  {lbl:'After the indictment', txt:'Holmes resigned as chief executive but kept the chair of the board.'}
+ ],
+ pull:{n:"$700M", l:"raised from investors via false or exaggerated claims, per the SEC"},
+ photo:{src:"media/reckoning-doj.jpg", cap:"The US Department of Justice building in Washington.", by:"Photo: Gunnar Klack, CC BY-SA 4.0", pos:"50% 50%"},
+ foot:'Sources: SEC (March 2018), DOJ (June 2018)'},
+
+/* 13 ----------------------------------------------------------------- */
+{section:'The reckoning', type:'columns', kicker:'August 2021 to December 2021 / San Jose',
+ head:'The trial',
+ cols:[
+  {k:'The prosecution', h:'Faked demonstrations, altered reports', p:'The evidence set out faked demonstrations, <b>falsified validation reports</b>, misleading claims about contracts, and overstated financials. Two schemes: investors, and doctors and patients.', p2:"Jurors were told the company claimed a $100 million revenue stream for 2014 when it booked about $100,000, and said the technology was used by the Department of Defense in combat."},
+  {k:'The defence', h:'Seven days on the stand', p:'Holmes testified on her own behalf for seven days: she said staff misled her about the technology, and that Balwani held sway over her during the secret romantic relationship they had while the alleged acts took place.', p2:"Her lawyers argued the government had not proved she meant to deceive anyone, and that the company’s failures were operational rather than criminal."},
+  {k:'The witnesses', h:'Reporters, lab staff, patients', p:'John Carreyrou, Erika Cheung, Tyler Shultz, laboratory directors and patients all testified. The judge was Edward Davila of the Northern District of California.', p2:"Two former employees who had raised concerns inside the company, Tyler Shultz and Erika Cheung, testified against it."},
+  {k:'The delay', h:'More than a year late', p:'The trial was pushed past its original date by the pandemic and by a pregnancy, and finally opened on <b>August 31, 2021</b>, with closing arguments in December.', p2:"The pandemic pushed the case back more than a year, and Holmes gave birth to her first child weeks before the trial opened."}
+ ],
+ stats:[{n:"7 days", l:"Holmes on the witness stand, in her own defence"},{n:"11", l:"counts she faced when the jury went out"},{n:"Dec 2021", l:"closing arguments, five months after the trial opened"}],
+ strip:{t:"The jury convicted her on the investor counts and cleared her on every count that concerned patients.", w:"the verdict, 3 January 2022"},
+ photo:{src:"media/witness-shultz.jpg", cap:"Tyler Shultz, a former Theranos employee and grandson of board member George Shultz, in 2024.", by:"Photo: Jay Dixit, CC BY-SA 4.0", pos:"50% 12%"},
+ foot:'Sources: DOJ, court record, AP / Reuters reporting'},
+
+/* 14 ----------------------------------------------------------------- */
+{section:'The verdict', type:'verdict', kicker:'January 3, 2022 / four counts of eleven',
+ head:'Guilty on four counts',
+ rows:[
+  {ch:'Wire fraud against investors', cn:'3 counts', v:'Guilty', kind:'guilty'},
+  {ch:'Conspiracy to commit wire fraud', cn:'1 count', v:'Guilty', kind:'guilty'},
+  {ch:'Wire fraud against patients', cn:'4 counts', v:'Not guilty', kind:'plain'},
+  {ch:'Further investor wire fraud counts', cn:'3 counts', v:'Mistrial, later dismissed', kind:'grey'}
+ ],
+ note:'Balwani was convicted on all 12 counts against him in July 2022. Holmes was sentenced to 11 years and 3 months, and both were ordered to pay $452 million in restitution.',
+ foot:'Sources: DOJ, sworn verdict form, AP'},
+
+/* 15 ----------------------------------------------------------------- */
+{section:'The sentence', type:'lead', kicker:'November 18, 2022',
+ head:'135 months, and a bill for $452 million',
+ lead:'Judge Davila sentenced Holmes to <b>11 years and 3 months</b> in federal prison plus three years of supervised release, and ordered her and Balwani <b>jointly to pay $452 million</b> in restitution to the victims of the fraud. Her lawyers had asked for 18 months of house arrest; the court refused, and she was ordered to surrender.',
+ side:[
+  {lbl:'Her co-defendant', txt:'Balwani was sentenced on December 7, 2022 to <b>155 months</b>, or 12 years and 11 months, plus three years of supervision, having been convicted on all 12 counts.'},
+  {lbl:'The surrender', txt:'Holmes reported to <b>Federal Prison Camp, Bryan, Texas</b>, a minimum security facility, on May 30, 2023, register number 24965-111.'},
+  {lbl:'By then', txt:'She had married hotel heir Billy Evans in 2019, and had two children, born in 2021 and 2023.'}
+ ],
+ pull:{n:"135", l:"months in federal prison, plus three years of supervised release"},
+ photo:{src:"media/sentence-prison.jpg", cap:"Federal Prison Camp Bryan in Texas, where Holmes is serving her sentence.", by:"Photo: US Bureau of Prisons, public domain", pos:"50% 50%"},
+ foot:'Sources: DOJ (Nov and Dec 2022), Bureau of Prisons'},
+
+/* 16 ----------------------------------------------------------------- */
+{section:'The cost', type:'lead', kicker:'Where the harm landed',
+ head:'The patients were never in the verdict',
+ lead:'Holmes was acquitted on every count that concerned patients, but patient harm was not in the balance in the same way. <b>Two years of Edison results were voided</b> and patients were told to be retested. Arizona alleged that <b>1.5 million tests</b> had been sold in the state with important facts concealed. Inside the company, staff who raised concerns were marginalised or fired, and Ian Gibbons, the chief scientist, took his own life in 2013 after being deposed in litigation connected to his role there.',
+ side:[
+  {lbl:'The awkward part', txt:'Theranos was required to void, correct and pay for retesting: a remedy for the record, not a finding of guilt about the patients.'},
+  {lbl:'Volume', txt:'More than 800 people worked at Theranos at its height in 2015. By April 2018 fewer than two dozen were left.'},
+  {lbl:'No data', txt:'Ten years in, the company had still never published a peer-reviewed study of the technology it was selling.'}
+ ],
+ pull:{n:"2 years", l:"of Edison test results voided, with patients told to be retested"},
+ photo:{src:"media/patients-needle.jpg", cap:"Blood sample tubes; an illustrative image, not a picture of any patient.", by:"Photo: US Marine Corps, public domain", pos:"50% 50%"},
+ foot:'Sources: WSJ, Arizona AG, JAMA, Wikipedia (Theranos, Ian Gibbons)'},
+
+/* 17 ----------------------------------------------------------------- */
+{section:'The rest', type:'timeline', kicker:'2023 to 2026 / where it stands',
+ head:'Where it stands now',
+ items:[
+  {yr:'2023', hot:true, h:'Surrender', tx:'May 30: Holmes reports to Federal Prison Camp, Bryan, Texas, to begin a 135 month sentence.'},
+  {yr:'2025', h:'First interview from prison', tx:'February: she tells People it has been hell and torture, and maintains her innocence.'},
+  {yr:'2026', h:'Clemency asked for', tx:'January: she asks President Trump to commute the sentence. The request is pending at the Office of the Pardon Attorney.'},
+  {yr:'2026', hot:true, h:'Sentence cut to 123 months', tx:'March 26: a federal judge in San Jose trims the term, finding no investor proved financial hardship.'},
+  {yr:'2026', h:'Release projected', tx:'The Bureau of Prisons lists a projected release of February 22, 2030. Projections can move.'},
+  {yr:'2026', hot:true, h:'Back on screen', tx:'September 6: the A24 documentary \u201cYou Can See Everything\u201d, by Nathan Fielder and Lance Oppenheim, premieres at Telluride.'}
+ ],
+ foot:'Sources: Reuters, AP, USA Today, Britannica, Business Insider (Mar 2026)'},
+
+/* 18 ----------------------------------------------------------------- */
+{section:'What to notice', type:'closing', kicker:'Nothing here was hidden in 2015',
+ head:'Six things that were visible in 2014',
+ items:[
+  {h:'No published data', p:'Ten years in, the science had never been peer reviewed or published (Ioannidis, JAMA, February 2015).'},
+  {h:'No independent check', p:'A board with no laboratory medicine expertise, and a device that was never opened to outside validation.'},
+  {h:'Secrecy as policy', p:'Employees could not discuss their work with each other. People who raised concerns were marginalised or fired.'},
+  {h:'A story instead of a demo', p:'Investors were shown staged demonstrations and validation reports that had been altered.'},
+  {h:'Customers treated as evidence', p:'Walgreens and Safeway deals were read as proof of the technology rather than as obligations to be met.'},
+  {h:'Numbers with no source', p:'$100 million of projected 2014 revenue against roughly $100,000 of actual revenue.'}
+ ],
+ foot:'Compiled 17 September 2026. Sources: DOJ, SEC, CMS, WSJ, Bureau of Prisons, Reuters, AP, USA Today, Britannica. No photographs are used: every mark on these pages is type, rule or plain ink.'}
+,
+/* 19 ----------------------------------------------------------------- */
+{section:"Picture credits", type:"credits", kicker:"Every photograph is from Wikimedia Commons, openly licensed",
+ head:"Photo credits and licences",
+ note:"All photographs in this deck come from Wikimedia Commons under open licences. Each is listed here with its photographer, licence and the address of the original file page. The blood sample picture is illustrative and shows no patient. No image in this deck is AI generated."}
+];
+
+/* ======================= render ======================= */
+const pad2 = n => String(n).padStart(2,'0');
+const N = SLIDES.length;
+const stage = document.getElementById('stage');
+const titles = [];
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+function chrome(s, i, body){
+  const score = SCORE.map(x=>`<div><div class="n">${esc(x.n)}</div><div class="l">${esc(x.l)}</div></div>`).join('');
+  return `<div class="paper">
+    <div class="runhead"><span class="rh-sec">${esc(s.section)}</span><span class="rh-mid">The $9 Billion Drop of Blood</span><span>Sept 2026</span></div>
+    <div class="hr-ink"></div><div class="hr-thin"></div>
+    <div class="content">${body}</div>
+    <div class="boxscore">${score}</div>
+    <div class="pager"><span>${esc(s.foot||'')}</span><span class="pg">PAGE <b>${pad2(i+1)}</b> / ${N}</span></div>
+  </div>`;
+}
+
+function cover(s){
+  return `<div class="paper" style="padding:34px 44px 30px">
+    <div class="runhead"><span class="rh-sec">The investigation</span><span class="rh-mid">A broadsheet in ${N} pages</span><span>Sept 2026</span></div>
+    <div style="text-align:center;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:9px 0 11px;margin-top:3px">
+      <div style="font-family:'Bodoni',serif;font-weight:800;font-size:56px;line-height:1">${esc(s.nameplate)}</div>
+      <div style="font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.26em;text-transform:uppercase;color:#3b372f;margin-top:8px">${esc(s.sub)}</div>
+    </div>
+    <div class="hr-ink" style="height:3px;margin-bottom:16px"></div>
+    <div class="content covergrid" style="padding-top:0">
+      <div>
+        <h1 data-an style="--d:80;font-size:58px">${s.head}</h1>
+        <p class="standfirst" data-an style="--d:200;margin-top:18px;max-width:640px;font-size:19px">${s.lead}</p>
+      </div>
+      <div>
+        ${photoFig(s.photo, '', 250)}
+        <div data-an style="--d:300;border-top:3px solid var(--ink);padding-top:10px;margin-top:14px">
+          <div class="kicker">The four numbers that matter</div>
+          ${SCORE.map((x,i)=>`<div data-an style="--d:${340+i*70};display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding:6px 0">
+            <span style="font-family:'Bodoni',serif;font-weight:800;font-size:23px">${esc(x.n)}</span>
+            <span style="font-family:'PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);text-align:right;max-width:210px">${esc(x.l)}</span></div>`).join('')}
+        </div>
+        <p class="note" data-an style="--d:640;margin-top:9px">Every figure is cited on its page; every photograph is credited on the last page.</p>
+      </div>
+    </div></div>
+    <div class="rail">${[['One','The promise','A dropout, a device and a board of statesmen'],
+      ['Two','The money','$945 million in, and what it bought'],
+      ['Three','The collapse','Voided results, a revoked licence, a dead company'],
+      ['Four','The reckoning','The SEC, the trial, four guilty counts'],
+      ['Five','After','123 months, a pending clemency ask, a new documentary']]
+      .map((r,i)=>`<div class="rb" data-an style="--d:${700+i*70}"><div class="i">${r[0]}</div>
+        <div class="t">${r[1]}</div><div class="d">${r[2]}</div></div>`).join('')}</div>
+    <div class="pager" style="margin-top:12px"><span>${esc(s.foot)}</span><span class="pg">PAGE <b>01</b> / ${N}</span></div>
+  </div>`;
+}
+
+function lead(s, i){
+  const side = (s.side||[]).map((b,k)=>`<div class="blk" data-an style="--d:${340+k*90}">
+      <div class="lbl">${esc(b.lbl)}</div>
+      ${b.big!==undefined && b.big!=='' ? `<div class="big">${esc(b.big)}</div>`:''}
+      <div class="txt" style="margin-top:${b.big?'7px':'0'}">${b.txt}</div></div>`).join('');
+  return chrome(s,i,`<div class="split">
+    <div class="main">
+      <div class="kicker" data-an>${esc(s.kicker||'')}</div>
+      <h1 data-an style="--d:70">${s.head}</h1>
+      <div data-draw style="--d:180;height:12px;background:var(--ink);width:120px;margin:20px 0"></div>
+      <p class="standfirst" data-an style="--d:240">${s.lead}</p>
+      ${s.pull ? `<div class="pull" data-an style="--d:330"><span class="pn">${esc(s.pull.n)}</span><span class="pl">${esc(s.pull.l)}</span></div>` : ''}
+    </div>
+    <div class="side">${s.photo?photoFig(s.photo,"lead-photo",300):""}${side}</div>
+  </div>`);
+}
+
+function columns(s, i){
+  const cols = s.cols.map((c,k)=>`<div class="col" data-an style="--d:${180+k*90}">
+      <div class="kicker">${esc(c.k)}</div>
+      <h3>${esc(c.h)}</h3>
+      <div class="rule-soft" data-draw style="--d:${230+k*90}"></div>
+      <p class="body">${c.p}</p>
+      ${c.p2?`<p class="body" style="margin-top:7px">${c.p2}</p>`:''}</div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+      ${s.photo ? photoFig(s.photo, 'headphoto', 150)
+        : `<div class="statband" data-an style="--d:150">${(s.stats||[]).map(x=>
+            `<div class="sb"><div class="sbn">${esc(x.n)}</div><div class="sbl">${esc(x.l)}</div></div>`).join('')}</div>`}
+    </div>
+    <div class="hr-ink" data-draw style="--d:120;margin-bottom:14px"></div>
+    <div class="cols">${cols}</div>
+    ${s.strip?`<div class="strip" data-an style="--d:620"><span class="st">${esc(s.strip.t)}</span>
+      <span class="sw">${esc(s.strip.w)}</span></div>`:''}
+  </div>`);
+}
+
+function numbers(s, i){
+  const cells = s.nums.map((c,k)=>`<div class="cell" data-an style="--d:${160+k*90}">
+      <div class="n">${esc(c.n)}</div><div class="l">${esc(c.l)}</div>
+      <p class="body" style="margin-top:10px">${c.body}</p>
+      ${c.s?`<div class="csrc">source: ${esc(c.s)}</div>`:''}</div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div style="margin-bottom:6px"><div class="kicker" data-an>${esc(s.kicker||'')}</div>
+      <h2 data-an style="--d:70">${s.head}</h2></div>
+    <div class="hr-ink" data-draw style="--d:130;margin-bottom:10px"></div>
+    <div class="numbers">${cells}</div>
+  </div>`);
+}
+
+function quote(s, i){
+  const tl = (s.tl||[]).map((x,k)=>`<div class="it" data-an style="--d:${480+k*90}">
+      <div class="yr">${esc(x.yr)}</div><div class="bar" data-draw style="--d:${520+k*90}"></div>
+      <div class="tx">${x.tx}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="kicker" data-an>${esc(s.kicker||'')}</div>
+    <blockquote data-an style="--d:80;font-family:'Bodoni',serif;font-style:italic;font-weight:700;
+      font-size:var(--t-quote);line-height:1.12;letter-spacing:-.01em;max-width:1180px">
+      &ldquo;${esc(s.quote)}&rdquo;</blockquote>
+    <div data-an style="--d:260;margin-top:22px;font-family:'PlexMono',monospace;font-size:var(--t-label);
+      letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)">
+      ${esc(s.who)} <span style="color:var(--ink3)">/ ${esc(s.when)}</span></div>
+    <div class="note" data-an style="--d:330;margin-top:auto;color:var(--red)">The three dates that broke the story</div>
+    <div class="hr-ink" data-draw style="--d:380;margin-top:8px"></div>
+    <div class="tl" style="padding-top:18px;height:auto">${tl}</div>
+  </div>`);
+}
+
+function verdict(s, i){
+  const rows = s.rows.map((r,k)=>`<tr data-an style="--d:${170+k*90}">
+      <td class="ch">${esc(r.ch)}</td><td class="cn">${esc(r.cn)}</td>
+      <td class="vd">${r.kind==='guilty'
+        ? `<span class="stamp" data-stamp style="--d:${300+k*90}">${esc(r.v)}</span>`
+        : `<span class="stamp ${r.kind}">${esc(r.v)}</span>`}</td></tr>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+      <div class="note" data-an style="--d:150">The seven investor counts were split three ways: four guilty, three hung. The four patient counts were all not guilty. The prosecution later dropped the three hung counts.</div>
+    </div>
+    <table class="tally"><thead><tr><th>Charge</th><th>Counts</th><th>Verdict</th></tr></thead>
+      <tbody>${rows}</tbody></table>
+    <div class="strip" data-an style="--d:640;margin-top:auto">
+      <span class="st">${esc(s.note)}</span><span class="sw">What came next</span></div>
+    <div class="statband" style="margin-top:14px" data-an>
+      <div class="sb"><div class="sbn">135 months</div><div class="sbl">Holmes, November 2022</div></div>
+      <div class="sb"><div class="sbn">155 months</div><div class="sbl">Balwani, all 12 counts, Dec 2022</div></div>
+      <div class="sb"><div class="sbn">$452M</div><div class="sbl">restitution, owed jointly</div></div>
+      <div class="sb"><div class="sbn">May 30, 2023</div><div class="sbl">the day she reported to prison</div></div>
+    </div>
+  </div>`);
+}
+
+function timeline(s, i){
+  const items = s.items.map((x,k)=>`<div class="it${x.hot?' hot':''}" data-an style="--d:${150+k*80}">
+      <div class="yr">${esc(x.yr)}</div><div class="bar" data-draw style="--d:${190+k*80}"></div>
+      <h4>${esc(x.h)}</h4><div class="tx">${x.tx}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+    <div class="hr-ink" data-draw style="--d:130;margin-top:12px"></div>
+    <div class="tl">${items}</div>
+  </div>`);
+}
+
+function chart(s, i){
+  const bars = s.bars.map((b,k)=>`<div class="b${b.hot?' hot':''}">
+      <div class="val">${esc(b.show)}</div>
+      <div class="bar" data-draw-bar style="--h:${b.v===0?'3px':Math.round(b.v*26)+'px'};--d:${240+k*140}"></div>
+      <div class="lab">${b.lab}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2>
+        <p class="standfirst" data-an style="--d:150;margin-top:10px;max-width:640px">The $9 billion was a private valuation, not cash. The losses were cash: partners, staff and investors paid for a device that was never validated.</p></div>
+      <div data-an style="--d:140">
+        <div class="note" style="margin-bottom:6px">${esc(s.counterLabel)}</div>
+        <div class="counter" id="bigcount" data-cnt="0" data-from="9000000000" data-fmt="usd">$9,000,000,000</div>
+      </div>
+    </div>
+    <div class="hr-ink" data-draw style="--d:200;margin:12px 0 10px"></div>
+    <div class="chartgrid">
+      <div style="display:flex;flex-direction:column">
+        <div class="axis" style="flex:1;min-height:0;position:relative">
+          <div class="grid">$9.0B full scale</div>
+          <div class="plot" style="height:100%">${bars}</div>
+        </div>
+        <div class="note" style="margin-top:5px;display:flex;justify-content:space-between">
+          <span>$0 baseline</span><span>bar height is proportional to value</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--rule);padding-left:32px">
+        <p class="body" data-an style="--d:420">${esc(s.note)}</p>
+        <div class="pull" data-an style="--d:520"><span class="pn">$452M</span>
+          <span class="pl">restitution ordered against Holmes and Balwani</span></div>
+      </div>
+    </div>
+  </div>`);
+}
+
+function closing(s, i){
+  const items = s.items.map((x,k)=>`<div data-an style="--d:${170+k*80};border-top:3px solid var(--ink);padding-top:9px">
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Bodoni',serif;font-weight:800;font-size:30px;color:var(--red)">${k+1}</span>
+        <h4 style="font-family:'SourceSerif',serif;font-weight:700;font-size:var(--t-h4);line-height:1.2">${esc(x.h)}</h4>
+      </div>
+      <p class="body" style="margin-top:6px">${x.p}</p></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+      <div class="note" data-an style="--d:140">A fraud this size is never one clever lie. It is six ordinary habits that nobody in the room was paid to question.</div>
+    </div>
+    <div class="six" style="margin-top:6px">${items}</div>
+    <div class="srcbox" data-an style="--d:700;margin-top:auto">
+      <div class="sh">Sources for every figure in this deck</div>
+      <p>U.S. Department of Justice, Northern District of California: indictment (14 June 2018), Holmes sentencing (18 November 2022), Balwani sentencing (7 December 2022). U.S. Securities and Exchange Commission: fraud charge and settlement (14 March 2018). Centers for Medicare and Medicaid Services: 2015-2016 inspection letters, CLIA revocation and two-year ban. The Wall Street Journal: John Carreyrou's investigation (15 October 2015 onward), and the May 2018 analysis putting the cost to business and government leaders above $600 million. Arizona Attorney General: 2017 suit and 2017 settlement. Bureau of Prisons: Bryan, Texas register 24965-111 and the projected release date. Reuters (21 January 2026), AP, USA Today (8 September 2026), Britannica and Business Insider (March 2026) for the resentencing, the clemency request and current projections. Consolidated reference records: Wikipedia on Theranos and Elizabeth Holmes, retrieved 17 September 2026.</p>
+      <p style="margin-top:8px">No photographs, no reconstructed quotes, no invented dialogue. Quotes shown verbatim are attributed to the outlet that recorded them. Compiled 17 September 2026.</p>
+    </div>
+  </div>`);
+}
+
+/* a placed photograph: box aspect comes from the context class, framing from p.pos */
+function photoFig(p, cls, d){
+  if(!p) return '';
+  return `<figure class="photo ${cls||''}" data-an style="--d:${p.d||d||200}">
+    <img data-src="${p.src}" alt="${esc(p.alt||p.cap)}" style="object-position:${p.pos||'50% 50%'}">
+    <figcaption>${esc(p.cap)}${p.by?` <span class="cred">${esc(p.by)}</span>`:''}</figcaption></figure>`;
+}
+
+/* the credits sheet: every image with photographer, licence and source file page */
+function credits(s, i){
+  const cr = PHOTOS.map((p,k)=>`<div class="cr" data-an style="--d:${130+k*45}">
+      <div class="crc">${esc(p.en||p.fa||'')}</div>
+      <div class="crl">${esc(p.by)} / ${esc(p.lic)}</div>
+      <div class="crl">${esc(p.page)}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+    <div class="hr-ink" data-draw style="--d:120;margin:10px 0 14px"></div>
+    <div class="crgrid">${cr}</div>
+    <p class="note" data-an style="--d:680;margin-top:auto">${esc(s.note||'')}</p>
+  </div>`);
+}
+
+const RENDER = {cover, lead, columns, numbers, quote, verdict, timeline, chart, closing, credits};
+
+SLIDES.forEach((s,i)=>{
+  const el = document.createElement('section');
+  el.className = 'slide'; el.dataset.i = i;
+  el.innerHTML = (RENDER[s.type]||lead)(s,i);
+  stage.appendChild(el);
+  titles.push({sec:s.section, head:(s.head||s.nameplate||'').replace(/<[^>]+>/g,'')});
+});
+
+/* ======================= navigation ======================= */
+let cur = -1, flat = false, playing = false, ptimer = null, ppct = 0;
+const slides = Array.from(document.querySelectorAll('.slide'));
+const progfill = document.getElementById('progfill');
+const playbar = document.getElementById('playbar');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce) document.documentElement.classList.add('reduce');
+
+function fmt(v, kind){
+  if(kind==='usd') return '$' + Math.round(v).toLocaleString('en-US');
+  return Math.round(v).toLocaleString('en-US');
+}
+function runCounters(sl){
+  sl.querySelectorAll('[data-cnt]').forEach(el=>{
+    const to = parseFloat(el.dataset.cnt||'0');
+    const from = parseFloat(el.dataset.from||'0');
+    const kind = el.dataset.fmt;
+    if(reduce){ el.textContent = fmt(to,kind); el.classList.toggle('dead', to===0); return; }
+    const t0 = performance.now(), dur = 1400;
+    const step = t => {
+      const p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3);
+      const v = from + (to-from)*e;
+      el.textContent = fmt(v,kind);
+      if(p<1) requestAnimationFrame(step);
+      else { el.textContent = fmt(to,kind); el.classList.toggle('dead', to===0); }
+    };
+    requestAnimationFrame(step);
+  });
+}
+/* photos load when their page is reached, with one retry: firing every image at once over a slow
+   link loses some fetches, and Chrome then treats the failure as cached for that URL */
+function loadPhotos(sl){
+  sl.querySelectorAll('img[data-src]').forEach(img=>{
+    if(img.src) return;
+    img.addEventListener('error', ()=>{
+      if(img.dataset.retry) return;
+      img.dataset.retry = '1';
+      img.src = img.dataset.src + (img.dataset.src.includes('?') ? '&' : '?') + 'r=1';
+    });
+    img.src = img.dataset.src;
+  });
+}
+function warm(n){
+  const sl = slides[n]; if(!sl) return;
+  sl.querySelectorAll('img[data-src]').forEach(img=>{ if(!img.src){ const i = new Image(); i.src = img.dataset.src; } });
+}
+
+function show(n, push){
+  n = Math.max(0, Math.min(N-1, n));
+  if(n === cur) return;
+  if(cur >= 0){
+    const old = slides[cur];
+    old.classList.remove('on');
+    old.querySelectorAll('[data-cnt]').forEach(el=>{ el.classList.remove('dead'); });
+  }
+  cur = n;
+  const el = slides[cur];
+  el.classList.remove('on');
+  void el.offsetWidth;
+  el.classList.add('on');
+  el.scrollTop = 0;
+  loadPhotos(el);
+  warm(cur+1); warm(cur-1);
+  runCounters(el);
+  progfill.style.width = ((cur+1)/N*100).toFixed(2)+'%';
+  if(push !== false) history.replaceState(null,'','#'+(cur+1));
+  if(flat) toggleContents(false);
+  if(playing){ clearTimeout(ptimer); ppct = 0; tick(); }
+}
+function tick(){
+  if(!playing) return;
+  ppct += 50;
+  playbar.style.width = Math.min(100, ppct/14000*100)+'%';
+  if(ppct >= 14000){
+    if(cur === N-1){ setPlay(false); return; }
+    show(cur+1); return;
+  }
+  ptimer = setTimeout(tick, 50);
+}
+function setPlay(v){
+  playing = v; clearTimeout(ptimer);
+  if(v){ ppct = 0; tick(); } else { playbar.style.width = '0'; }
+}
+/* overlays */
+const ovContents = document.getElementById('contents'), ovHelp = document.getElementById('help');
+function toggleContents(v){
+  flat = (v === undefined) ? !flat : v;
+  ovContents.classList.toggle('on', flat);
+  if(flat){ setPlay(false); buildGrid(); }
+}
+document.getElementById('ovgrid').addEventListener('click', e=>{
+  const a = e.target.closest('a'); if(!a) return;
+  e.preventDefault(); show(parseInt(a.dataset.n,10));
+});
+function buildGrid(){
+  document.getElementById('ovgrid').innerHTML = titles.map((t,i)=>
+    `<a href="#${i+1}" data-n="${i}"><span class="no">${pad2(i+1)}</span>
+      <span class="tt">${esc(t.head)}<i>${esc(t.sec)}</i></span></a>`).join('');
+}
+/* layout mode + fit */
+function fit(){
+  const vw = innerWidth, vh = innerHeight;
+  const scale = Math.min(vw / 1600, vh / 900);
+  /* a fixed 1600x900 canvas scaled below ~0.72 puts body copy under 11px, so narrow or
+     rotated viewports get the stacked (phone) layout instead of a shrunken broadsheet */
+  const land = (vw / vh) >= 1.02 && vw >= 700 && scale >= 0.72;
+  document.documentElement.classList.toggle('landscape', land);
+  document.documentElement.classList.toggle('portrait', !land);
+  if(land){
+    const s = Math.min(vw/1600, vh/900);
+    document.documentElement.style.setProperty('--fit', s.toFixed(4));
+  }
+}
+addEventListener('resize', ()=>{ fit(); });
+/* input */
+addEventListener('keydown', e=>{
+  const k = e.key;
+  if(k === 'Escape'){ toggleContents(false); ovHelp.classList.remove('on'); return; }
+  if(k === '?' || (k==='/' && e.shiftKey)){ ovHelp.classList.toggle('on'); setPlay(false); return; }
+  if(k === 'o' || k === 'O'){ toggleContents(); return; }
+  if(k === 'p' || k === 'P'){ setPlay(!playing); return; }
+  if(k === 'f' || k === 'F'){ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); return; }
+  if(k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'Enter'){ setPlay(false); show(cur+1); e.preventDefault(); return; }
+  if(k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp' || k === 'Backspace'){ setPlay(false); show(cur-1); e.preventDefault(); return; }
+  if(k === 'Home'){ show(0); return; }
+  if(k === 'End'){ show(N-1); return; }
+});
+document.getElementById('zoneL').addEventListener('click', ()=>show(cur-1));
+document.getElementById('zoneR').addEventListener('click', ()=>show(cur+1));
+/* wheel with lockout */
+let wlock = 0;
+addEventListener('wheel', e=>{
+  const now = Date.now();
+  if(now - wlock < 700) return;
+  if(Math.abs(e.deltaY) < 12 && Math.abs(e.deltaX) < 12) return;
+  const d = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+  if(Math.abs(d) < 18) return;
+  wlock = now; setPlay(false); show(cur + (d>0?1:-1));
+}, {passive:true});
+/* swipe */
+let sx=0, sy=0, st=0;
+addEventListener('touchstart', e=>{ const t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; st=Date.now(); }, {passive:true});
+addEventListener('touchend', e=>{
+  const t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy, dt=Date.now()-st;
+  if(dt>900) return;
+  if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)*1.4){ setPlay(false); show(cur + (dx<0?1:-1)); }
+}, {passive:true});
+/* boot */
+fit();
+const start = parseInt((location.hash||'').replace('#',''),10);
+show(isNaN(start) ? 0 : start-1);
+setTimeout(fit, 60);
+addEventListener('hashchange', ()=>{ const n = parseInt(location.hash.replace('#',''),10); if(!isNaN(n)) show(n-1, false); });
+</script>
+</body>
+</html>

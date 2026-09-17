@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="landscape">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قطره خونی به قیمت ۹ میلیارد دلار - ارائه ترانوس</title>
+<meta name="description" content="نوزده صفحه درباره ترانوس و الیزابت هلمز: وعده، پول، فروپاشی، رأی. هر عدد منبع دارد.">
+<style>
+/* ============ fonts (self-hosted, subset) ============ */
+@font-face{font-family:'Amiri';src:url('fonts/amiri-regular.woff2') format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'Amiri';src:url('fonts/amiri-bold.woff2') format('woff2');font-weight:700 900;font-display:block}
+@font-face{font-family:'Vazirmatn';src:url('fonts/vazirmatn.woff2') format('woff2');font-weight:100 900;font-display:block}
+@font-face{font-family:'Naskh';src:url('fonts/naskh.woff2') format('woff2');font-weight:400 900;font-display:block}
+@font-face{font-family:'PlexMono';src:url('fonts/ibmplexmono-400.woff2') format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'PlexMono';src:url('fonts/ibmplexmono-600.woff2') format('woff2');font-weight:600;font-display:block}
+
+/* ============ tokens ============ */
+:root{
+  --ink:#14130f; --ink2:#4a453c; --ink3:#8a8375;
+  --rule:#b3ab9c; --rule2:#d8d3c7; --paper:#f6f4ee; --paper2:#efece3;
+  --red:#a31621; --mark:#f0dca0;
+  /* type ladder */
+  --t-name:60px; --t-h1:63px; --t-h2:40px; --t-h3:23px; --t-h4:18px;
+  --t-quote:55px; --t-lead:18px; --t-body:15px; --t-small:13px; --t-label:10.5px;
+  --t-num:30px; --t-bignum:74px; --t-cover:54px;
+  --s1:8px; --s2:12px; --s3:16px; --s4:24px; --s5:32px; --s6:48px;
+  --pad:44px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#2a2823;font-family:'Vazirmatn',Georgia,serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+html.portrait body{overflow-y:auto}
+
+/* ============ stage ============ */
+.stage{position:relative;margin:0 auto}
+html.landscape .stage{width:1600px;height:900px;transform:scale(var(--fit,1));transform-origin:50% 50%;
+  box-shadow:0 30px 90px rgba(0,0,0,.55)}
+html.landscape body{display:flex;align-items:center;justify-content:center}
+html.portrait .stage{width:100%;max-width:560px;min-height:100dvh;transform:none;box-shadow:none}
+html.portrait{background:#f6f4ee}
+html.portrait body{background:var(--paper)}
+
+/* ============ slide ============ */
+.slide{position:absolute;inset:0;background:var(--paper);overflow:hidden}
+html.portrait .slide{position:relative;inset:auto;min-height:100dvh;overflow:visible}
+html.landscape .slide{opacity:0;pointer-events:none;visibility:hidden}
+html.landscape .slide.on{opacity:1;pointer-events:auto;visibility:visible}
+html.portrait .slide{display:none}
+html.portrait .slide.on{display:block}
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:40;opacity:.15;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='0.55'/></svg>")}
+.paper{position:relative;z-index:2;height:100%;padding:var(--pad);display:flex;flex-direction:column}
+html.portrait .paper{height:auto;min-height:100dvh;padding:24px 20px 30px}
+
+/* ============ chrome ============ */
+.runhead{display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink2);padding-bottom:7px}
+.runhead .rh-sec{color:var(--red);font-weight:600}
+.runhead .rh-mid{color:var(--ink3)}
+.hr-ink{height:3px;background:var(--ink)}
+.hr-thin{height:1px;background:var(--rule);margin-top:3px}
+.content{flex:1;padding-top:var(--s4);min-height:0;position:relative}
+.boxscore{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:3px solid var(--ink);
+  margin-top:var(--s3);padding-top:9px}
+.boxscore div{padding:0 16px;border-inline-end:1px solid var(--rule)}
+.boxscore div:first-child{padding-inline-start:0}
+.boxscore div:last-child{border-inline-end:0}
+.boxscore .n{font-family:'Amiri',Georgia,serif;font-weight:700;font-size:var(--t-num);line-height:1}
+.boxscore .l{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink2);margin-top:5px;min-height:2.7em}
+.pull{margin-top:24px;border-top:3px solid var(--ink);padding-top:10px;display:flex;align-items:baseline;gap:16px}
+.pull .pn{font-family:'Amiri',Georgia,serif;font-weight:800;font-size:44px;line-height:1;letter-spacing:-.02em}
+.pull .pl{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);line-height:1.6}
+.axis{position:relative;border-bottom:3px solid var(--ink)}
+.axis .grid{position:absolute;left:0;right:0;top:0;border-top:1px dashed var(--rule);font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);color:var(--ink3);letter-spacing:.12em;text-transform:uppercase;padding-top:2px}
+.pager{display:flex;justify-content:space-between;align-items:center;margin-top:var(--s1);
+  font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);min-height:14px}
+.pager .pg{color:var(--ink2)}
+.pager .pg b{color:var(--red);font-weight:600}
+
+/* ============ shared type ============ */
+h1,h2,h3{font-family:'Amiri',Georgia,serif;font-weight:800;letter-spacing:-.015em}
+h1{font-size:var(--t-h1);line-height:.96}
+h2{font-size:var(--t-h2);line-height:1.02}
+h3{font-size:var(--t-h3);line-height:1.12;font-weight:700}
+em{font-style:italic}
+.kicker{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);margin-bottom:9px}
+.kicker.ink{color:var(--ink2)}
+.standfirst{font-size:var(--t-lead);line-height:1.42;color:#25221c}
+.standfirst b,.body b,li b{background:var(--mark);padding:0 2px}
+.body{font-size:var(--t-body);line-height:1.44;color:#28241d}
+.note{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.08em;color:var(--ink2);
+  line-height:1.6;text-transform:uppercase}
+.tag{display:inline-block;font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.24em;
+  text-transform:uppercase;border:2px solid var(--red);color:var(--red);padding:4px 9px}
+.rule-soft{height:1px;background:var(--rule);margin:var(--s3) 0}
+
+/* ============ layouts ============ */
+.split{display:grid;grid-template-columns:1.58fr minmax(0,1fr);gap:0;height:100%}
+.split .main{padding-inline-end:var(--s5);border-inline-end:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center}
+.split .side{padding-inline-start:var(--s5);display:flex;flex-direction:column;gap:var(--s3);justify-content:space-between}
+.side .blk{border-top:3px solid var(--ink);padding-top:8px}
+.side .blk .lbl{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--red);margin-bottom:5px}
+.side .blk .txt{font-size:var(--t-small);line-height:1.45;color:#2b271f}
+.side .blk .big{font-family:'Amiri',Georgia,serif;font-weight:700;font-size:26px;line-height:1}
+
+.csrc{margin-top:auto;border-top:1px solid var(--rule);padding-top:6px;font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;
+  font-size:var(--t-label);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.strip{margin-top:10px;border-top:3px solid var(--ink);padding-top:10px;
+  display:flex;align-items:baseline;gap:20px;justify-content:space-between}
+.strip .st{font-family:'Amiri',Georgia,serif;font-style:italic;font-weight:700;font-size:26px;line-height:1.15;max-width:1100px}
+.strip .sw{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);text-align:end;white-space:nowrap}
+.rail{display:flex;border-top:1px solid var(--rule);border-bottom:3px solid var(--ink);margin-top:12px}
+.rail .rb{flex:1;padding:7px 12px 8px;border-inline-end:1px solid var(--rule)}
+.rail .rb:last-child{border-inline-end:0}
+.rail .rb .i{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);color:var(--red);letter-spacing:.18em}
+.rail .rb .t{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);margin-top:5px}
+.rail .rb .d{font-size:11.5px;line-height:1.3;color:var(--ink2);margin-top:4px}
+.srcbox{border:1px solid var(--rule);background:var(--paper2);padding:11px 14px;margin-top:var(--s3)}
+.srcbox .sh{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);margin-bottom:6px}
+.srcbox p{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:11px;line-height:1.7;color:var(--ink2);letter-spacing:.02em}
+.chartgrid{display:grid;grid-template-columns:1.3fr minmax(0,1fr);gap:44px;flex:1;min-height:0}
+.photo{margin:0}
+.photo img{display:block;width:100%;height:auto;border:1px solid var(--rule);filter:saturate(.88) contrast(1.04)}
+.photo figcaption{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:9.5px;line-height:1.45;color:var(--ink2);margin-top:5px}
+.photo .cred{color:var(--ink3)}
+.lead-photo img{aspect-ratio:16/9;object-fit:cover}
+.covergrid .photo img{aspect-ratio:16/10;object-fit:cover}
+.headphoto{height:100%;display:flex;flex-direction:column}
+.headphoto img{height:170px;width:100%;object-fit:cover;border:1px solid var(--rule);filter:saturate(.88) contrast(1.04)}
+.headphoto figcaption{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:9.5px;line-height:1.4;color:var(--ink2);margin-top:5px}
+.crgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 34px}
+.cr{border-top:1px solid var(--rule);padding-top:6px}
+.cr .crc{font-size:13px;line-height:1.35}
+.cr .crl{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:9px;line-height:1.4;color:var(--ink2);margin-top:2px;overflow-wrap:anywhere}
+.statband{border:1px solid var(--rule);background:var(--paper2);display:flex;align-items:stretch}
+.statband .sb{flex:1;padding:9px 12px;border-inline-end:1px solid var(--rule)}
+.statband .sb:last-child{border-inline-end:0}
+.statband .sbn{font-family:'Amiri',Georgia,serif;font-weight:800;font-size:26px;line-height:1}
+.statband .sbl{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink2);margin-top:5px;line-height:1.5}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;flex:1;min-height:0}
+.cols .col{padding:0 18px;border-inline-end:1px solid var(--rule);display:flex;flex-direction:column}
+.cols .body{font-size:15.3px;line-height:1.42}
+.cols .col::after{content:'';margin-top:auto;height:1px;background:var(--rule2)}
+.cols .col:first-child{padding-inline-start:0}
+.cols .col:last-child{border-inline-end:0;padding-inline-end:0}
+
+.head-row{display:grid;grid-template-columns:1.7fr minmax(0,1fr);align-items:end;gap:var(--s5);margin-bottom:var(--s3)}
+
+.covergrid{display:grid;grid-template-columns:1.6fr minmax(0,1fr);gap:44px;align-items:center}
+.six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 26px}
+.six .body{font-size:15px;line-height:1.5}
+.inkblock{background:
+  radial-gradient(var(--ink) 1.35px, transparent 1.4px), radial-gradient(var(--red) 1.35px, transparent 1.4px);
+  background-size:7px 7px,7px 7px;background-position:0 0,3.5px 3.5px;opacity:.5}
+
+.numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:0;height:100%}
+.numbers .numline{display:block}
+.numbers .cell{padding:16px 26px 14px 0;border-inline-end:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:flex;flex-direction:column;justify-content:center;min-width:0}
+.numbers .cell:nth-child(2n){border-inline-end:0;padding-inline-end:0;padding-inline-start:26px}
+.numbers .cell:nth-child(n+3){border-bottom:0;padding-top:22px}
+.numbers .cell .n,.numbers .cell .l,.numbers .cell .body,.numbers .cell .csrc{max-width:640px}
+.numbers .cell .n{font-size:var(--t-bignum)}
+.numbers .n{font-family:'Amiri',Georgia,serif;font-weight:800;font-size:var(--t-bignum);line-height:.92;overflow-wrap:break-word;
+  letter-spacing:-.03em}
+.numbers .l{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);margin-top:10px;line-height:1.6}
+.numbers .body{margin-top:10px;font-size:var(--t-small)}
+
+table.tally{width:100%;border-collapse:collapse}
+table.tally th{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink2);text-align:start;padding:0 12px 7px 0;border-bottom:3px solid var(--ink);font-weight:400}
+table.tally td{padding:19px 12px 19px 0;border-bottom:1px solid var(--rule);vertical-align:middle}
+table.tally td.ch{font-family:'Amiri',Georgia,serif;font-weight:700;font-size:21px;line-height:1.1}
+table.tally td.cn{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-small);color:var(--ink2);width:70px}
+table.tally td.vd{width:250px;vertical-align:middle}
+.stamp{display:inline-block;min-width:158px;text-align:center;font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:11px;letter-spacing:.26em;
+  text-transform:uppercase;border:2px solid currentColor;padding:4px 9px;color:var(--red)}
+.stamp.grey{color:var(--ink3)}
+.stamp.plain{color:var(--ink2)}
+
+.tl{display:flex;align-items:stretch;gap:0;height:100%;padding-top:var(--s5)}
+.tl .it{flex:1;padding:0 14px;border-inline-start:1px solid var(--rule);display:flex;flex-direction:column}
+.tl .it:first-child{border-inline-start:0;padding-inline-start:0}
+.tl .yr{font-family:'Amiri',Georgia,serif;font-weight:700;font-size:var(--t-num);line-height:1}
+.tl .bar{height:6px;background:var(--ink);margin:9px 0 10px}
+.tl .it.hot .bar{background:var(--red)}
+.tl h4{font-family:'Vazirmatn',Georgia,serif;font-weight:700;font-size:var(--t-h4);line-height:1.2;margin-bottom:5px}
+.tl .tx{font-size:var(--t-small);line-height:1.42;color:#2b271f}
+
+.plot{display:flex;align-items:flex-end;gap:var(--s5);height:100%;padding-bottom:6px}
+.plot .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.plot .bar{width:100%;background:var(--ink);height:0;transition:height 1s cubic-bezier(.3,.9,.2,1);
+  transition-delay:calc(var(--d,0)*1ms)}
+.plot .b.hot .bar{background:var(--red)}
+.plot .val{font-family:'Amiri',Georgia,serif;font-weight:800;font-size:36px;line-height:1;margin-bottom:8px}
+.plot .lab{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);margin-top:9px;line-height:1.5}
+.counter{font-family:'Amiri',Georgia,serif;font-weight:800;font-size:64px;letter-spacing:-.03em;line-height:1}
+.counter.dead{color:var(--red)}
+
+/* ============ ui ============ */
+.ui{position:fixed;inset:0;pointer-events:none;z-index:100}
+.ui .zone{position:absolute;top:0;bottom:0;width:16%;pointer-events:auto;cursor:pointer}
+.ui .zone.l{left:0}.ui .zone.r{right:0}
+html.portrait .ui .zone{width:12%}
+.hintbar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:18px;
+  font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(246,244,238,.62);padding:8px;z-index:100;pointer-events:none;background:linear-gradient(transparent,rgba(20,19,15,.55))}
+html.portrait .hintbar{position:sticky;color:var(--ink2);background:none;padding:10px 6px 0}
+.progress{position:fixed;left:0;right:0;bottom:0;height:3px;background:rgba(20,19,15,.25);z-index:101}
+.progress i{display:block;height:100%;background:var(--red);width:0;transition:width .35s ease}
+.playbar{position:fixed;left:0;top:0;height:2px;background:var(--mark);width:0;z-index:101}
+.overlay{position:fixed;inset:0;background:var(--paper);z-index:120;display:none;overflow:auto;padding:38px 44px}
+.overlay.on{display:block}
+.overlay h2{font-family:'Amiri',Georgia,serif;font-size:34px;margin-bottom:4px}
+.overlay .sub{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink2);margin-bottom:24px}
+.ovgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--ink)}
+.ovgrid a{display:flex;gap:13px;align-items:baseline;padding:11px 16px 11px 0;border-bottom:1px solid var(--rule);
+  border-inline-end:1px solid var(--rule);text-decoration:none;color:var(--ink)}
+.ovgrid a:hover{background:var(--paper2)}
+.ovgrid .no{font-family:'Amiri',Georgia,serif;font-weight:700;font-size:22px;color:var(--red);min-width:34px}
+.ovgrid .tt{font-size:15px;line-height:1.3}
+.ovgrid .tt i{display:block;font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-style:normal;font-size:10px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-top:3px}
+.helpgrid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 20px;font-size:15px;max-width:720px}
+.helpgrid b{font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--red);font-weight:600}
+
+.lang{position:fixed;top:10px;right:12px;z-index:130;font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:11px;
+  background:var(--paper);border:1px solid var(--rule);padding:3px 9px;color:var(--ink);text-decoration:none;direction:rtl}
+.lang:hover{background:var(--paper2)}
+
+
+/* ============================ Farsi (RTL) overrides ============================ */
+:root{
+  --t-name:52px; --t-h1:50px; --t-h2:34px; --t-h3:22px; --t-h4:17px;
+  --t-quote:40px; --t-lead:18px; --t-body:15.5px; --t-small:13.5px; --t-label:11px;
+  --t-num:26px; --t-bignum:58px; --t-cover:52px;
+}
+h1,h2,h3,h4{line-height:1.28; letter-spacing:0}
+h1{line-height:1.24}
+blockquote{line-height:1.5 !important; font-style:normal}
+.kicker,.note,.lbl,.boxscore .l,.pager,.runhead,.sbl,.crc,.crl,.photo figcaption,.headphoto figcaption,
+.tl .tx,.strip .sw,.srcbox p,.srcbox .sh,.rail .rb .i,.rail .rb .t,.rail .rb .d,.statband .sbl,
+table.tally th,.hintbar,.helpgrid b,.ovgrid .tt i,.spg,.pg{
+  letter-spacing:0 !important; text-transform:none !important;
+}
+.standfirst,.body,.dek,p,li{text-align:justify; text-justify:inter-word}
+.numbers .n,.boxscore .n,.counter,.plot .val,.tl .yr,.pull .pn{letter-spacing:0 !important}
+.progress{display:flex; flex-direction:row}
+.hintbar{flex-wrap:wrap}
+.rail .rb .t{font-size:12px}
+.kicker{font-size:11.5px}
+.note{font-size:10.5px; line-height:1.75}
+.photo figcaption,.headphoto figcaption{font-size:10px; line-height:1.6}
+table.tally td.ch{font-size:21px; line-height:1.35}
+.stamp{font-size:11px; min-width:120px}
+.statband .sbn{font-size:24px}
+.counter{font-size:54px}
+.plot .val{font-size:30px}
+.strip .st{font-size:22px; line-height:1.5}
+.rail .rb .d{font-size:11px}
+.ovgrid .tt{font-size:14px; line-height:1.5}
+.helpgrid{font-size:14px}
+.srcbox p{font-size:10.5px; line-height:1.9}
+.cr .crl{font-size:9.5px}
+.lang{position:fixed;top:10px;inset-inline-end:12px;z-index:130;font-family:'Vazirmatn','PlexMono',monospace;
+  font-size:11px;background:var(--paper);border:1px solid var(--rule);padding:3px 9px;color:var(--ink);
+  text-decoration:none}
+.lang:hover{background:var(--paper2)}
+html.portrait{
+  --t-name:28px; --t-h1:29px; --t-h2:24px; --t-h3:19px; --t-h4:16px;
+  --t-quote:25px; --t-lead:15.5px; --t-body:14.5px; --t-small:13.5px; --t-label:10px;
+  --t-num:20px; --t-bignum:40px;
+}
+html.portrait .counter{font-size:32px}
+html.portrait .strip .st{font-size:17px}
+html.portrait .stamp{min-width:0;font-size:9.5px}
+
+/* ============ animation ============ */
+[data-an]{opacity:0;transform:translateY(15px);
+  transition:opacity .5s ease,transform .55s cubic-bezier(.2,.75,.2,1);
+  transition-delay:calc(var(--d,0) * 1ms)}
+.on [data-an]{opacity:1;transform:none}
+[data-draw]{transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .6s cubic-bezier(.45,.1,.2,1);transition-delay:calc(var(--d,0) * 1ms)}
+.on [data-draw]{transform:none}
+[data-stamp]{opacity:0;transform:scale(1.55) rotate(-13deg);
+  transition:opacity .2s ease,transform .36s cubic-bezier(.2,1.4,.4,1);
+  transition-delay:calc(var(--d,0) * 1ms)}
+.on [data-stamp]{opacity:1;transform:rotate(-4deg)}
+.plot .on .bar,.on .plot .bar{height:var(--h)}
+html.reduce [data-an],html.reduce [data-draw],html.reduce [data-stamp]{opacity:1;transform:none;transition:none}
+html.reduce .plot .bar{transition:none}
+
+@media print{
+  html,body{background:#fff;overflow:visible}
+  .ui,.hintbar,.progress,.playbar,.overlay{display:none!important}
+  html.landscape .stage{transform:none;box-shadow:none;width:100%;height:auto}
+  .slide{position:relative;opacity:1!important;visibility:visible!important;display:block!important;
+    height:100vh;page-break-after:always}
+  html.portrait .slide{min-height:auto}
+}
+
+/* ============ portrait reflow (phones) ============ */
+html.portrait{
+  --t-name:30px; --t-h1:33px; --t-h2:27px; --t-h3:19px; --t-h4:16px;
+  --t-quote:26px; --t-lead:15.5px; --t-body:14.5px; --t-small:13.5px; --t-label:9px;
+  --t-num:20px; --t-bignum:44px; --t-cover:30px;
+  --s4:16px; --s5:18px; --s6:24px; --pad:20px;
+}
+html.portrait .runhead{padding-bottom:5px}
+html.portrait .split{grid-template-columns:1fr;height:auto;gap:0}
+html.portrait .split .main{padding-inline-end:0;border-inline-end:0;padding-bottom:var(--s4);justify-content:flex-start}
+html.portrait .pull{margin-top:16px}
+html.portrait .pull .pn{font-size:32px}
+html.portrait .split .side{padding-inline-start:0;border-top:1px solid var(--rule);padding-top:var(--s3)}
+html.portrait .crgrid{grid-template-columns:1fr;gap:10px}
+html.portrait .headphoto img{height:210px}
+html.portrait .statband{flex-direction:column}
+html.portrait .statband .sb{border-inline-end:0;border-bottom:1px solid var(--rule);padding:8px 10px}
+html.portrait .statband .sb:last-child{border-bottom:0}
+html.portrait .statband .sbn{font-size:22px}
+html.portrait .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;height:auto}
+html.portrait .cols .col{padding:0 0 var(--s3)}
+html.portrait .cols .col:nth-child(even){padding-inline-start:16px;border-inline-start:1px solid var(--rule)}
+html.portrait .cols .col{padding:0 0 var(--s3);border-inline-end:0;border-bottom:1px solid var(--rule);
+  margin-bottom:var(--s3)}
+html.portrait .cols .col:last-child{border-bottom:0;margin-bottom:0}
+html.portrait .head-row{grid-template-columns:1fr;gap:var(--s2);align-items:start}
+html.portrait .covergrid{grid-template-columns:minmax(0,1fr);gap:18px;align-items:start}
+html.portrait .covergrid>*{min-width:0}
+html.portrait .six{grid-template-columns:1fr;gap:14px}
+html.portrait .numbers{grid-template-columns:1fr;height:auto;gap:0}
+html.portrait .strip{flex-direction:column;gap:6px}
+html.portrait .strip .st{font-size:20px}
+html.portrait .strip .sw{text-align:start;white-space:normal}
+html.portrait .rail{flex-wrap:wrap}
+html.portrait .rail .rb{flex:1 1 50%;border-bottom:1px solid var(--rule)}
+html.portrait .csrc{margin-top:10px}
+html.portrait .numbers .cell{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"n l" "n b";
+  gap:2px 14px;align-items:start;padding:0 0 11px;border-inline-end:0;border-bottom:1px solid var(--rule);
+  margin-bottom:11px}
+html.portrait .numbers .cell .n{grid-area:n;min-width:104px}
+html.portrait .numbers .cell .l{grid-area:l;margin-top:0}
+html.portrait .numbers .cell .body{grid-area:b;margin-top:2px!important}
+html.portrait table.tally th{padding:0 8px 6px 0;letter-spacing:.12em}
+html.portrait table.tally td{padding:8px 8px 8px 0}
+html.portrait table.tally td.ch{font-size:17px}
+html.portrait table.tally td.cn{width:56px}
+html.portrait table.tally td.vd{width:110px}
+html.portrait table.tally .stamp{min-width:0;font-size:9.5px;letter-spacing:.12em;padding:3px 6px;border-width:1.5px}
+html.portrait .plot .bar{max-height:110px}
+html.portrait .axis .grid{font-size:9px}
+html.portrait .chartgrid{grid-template-columns:1fr;gap:20px;flex:none}
+html.portrait .chartgrid>div:last-child{border-inline-start:0;padding-inline-start:0;border-top:1px solid var(--rule);padding-top:16px}
+html.portrait .plot .lab{font-size:9px}
+html.portrait .srcbox p{font-size:10px;line-height:1.62}
+html.portrait .boxscore{grid-template-columns:1fr 1fr;gap:10px 0}
+html.portrait .boxscore div{border-inline-end:0;padding:0 10px 0 0}
+html.portrait .tl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;height:auto;padding-top:var(--s3)}
+html.portrait .tl .it:nth-child(even){padding-inline-start:16px;border-inline-start:1px solid var(--rule)}
+html.portrait .tl .it{border-inline-start:0;border-top:1px solid var(--rule);padding:12px 0 0;margin-bottom:14px}
+html.portrait .tl .it:first-child{border-top:3px solid var(--ink)}
+html.portrait .tl .bar{height:4px;margin:7px 0 8px}
+html.portrait .plot{flex-direction:column;height:auto;gap:var(--s3);align-items:stretch}
+html.portrait .plot .b{height:auto}
+html.portrait .plot .bar{max-height:none}
+html.portrait .counter{font-size:38px}
+html.portrait h1{font-size:var(--t-h1)}
+html.portrait .ovgrid{grid-template-columns:1fr}
+html.portrait .overlay{padding:22px 18px}
+html.portrait .helpgrid{grid-template-columns:1fr;gap:4px 0}
+</style>
+</head>
+<body>
+<a class="lang" href="https://nine-billion-fa.surge.sh/" title="نسخه فارسی">فارسی</a>
+<a class="lang" href="https://nine-billion.surge.sh/" title="English version">EN</a>
+<div class="stage" id="stage"></div>
+
+<div class="ui" id="ui">
+  <div class="zone l" id="zoneL" title="Previous"></div>
+  <div class="zone r" id="zoneR" title="Next"></div>
+</div>
+<div class="playbar" id="playbar"></div>
+<div class="progress"><i id="progfill"></i></div>
+<div class="hintbar" id="hint">
+  <span>← → کلیدهای جهت</span><span>O فهرست</span><span>P پخش خودکار</span><span>F تمام‌صفحه</span><span>? راهنما</span>
+</div>
+
+<div class="overlay" id="contents">
+  <h2>فهرست</h2>
+  <div class="sub">قطره خونی به قیمت ۹ میلیارد دلار / ۱۹ صفحه</div>
+  <div class="ovgrid" id="ovgrid"></div>
+</div>
+<div class="overlay" id="help">
+  <h2>کلیدها</h2>
+  <div class="sub">این ارائه با کلید، کلیک، کشیدن انگشت و اسکرول کار می‌کند</div>
+  <div class="helpgrid">
+    <b>راست / فاصله</b><span>صفحه بعد</span>
+    <b>چپ</b><span>صفحه قبل</span>
+    <b>Home / End</b><span>اول / آخرین صفحه</span>
+    <b>O</b><span>فهرست</span>
+    <b>P</b><span>پخش خودکار (هر ۱۴ ثانیه)</span>
+    <b>F</b><span>تمام‌صفحه</span>
+    <b>Esc</b><span>بستن</span>
+    <b>کلیک</b><span>یک‌سوم راست جلو، یک‌سوم چپ عقب</span>
+    <b>کشیدن انگشت</b><span>هر دو جهت، روی موبایل</span>
+    <b>چاپ</b><span>هر صفحه روی یک برگ</span>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* =======================================================================
+   SOURCES for every figure in this deck:
+   DOJ (US v. Elizabeth Holmes, et al. press releases), SEC (March 2018 charge
+   and settlement), CMS (2016 inspection letters and sanctions), The Wall
+   Street Journal (Carreyrou, Oct 2015 onward, incl. the May 2018 $600M
+   analysis), Bureau of Prisons (projected release), Reuters / AP / USA Today /
+   Britannica (Jan-Sept 2026 reporting), and the consolidated Wikipedia record
+   on Theranos and Elizabeth Holmes (retrieved 17 Sept 2026).
+   ======================================================================= */
+
+const SCORE = [
+  {n:"۹۴۵ میلیون دلار", l:"از سرمایه‌گذاران جمع شد"},
+  {n:"۹ میلیارد دلار", l:"ارزش اوج، ۲۰۱۵"},
+  {n:"۴ از ۱۱", l:"فقره‌های محکومیت، ژانویه ۲۰۲۲"},
+  {n:"۱۲۳ ماه", l:"حکم، کاهش‌یافته در مارس ۲۰۲۶"}
+];
+
+/* photographs used in this deck, with their credit lines (see the last page) */
+const PHOTOS = [
+ {file:"cover-holmes.jpg", fa:"الیزابت هلمز، ۲۰۱۴", by:"Max Morse / TechCrunch", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:Elizabeth_Holmes_2014_(cropped).jpg"},
+ {file:"promise-2016.jpg", fa:"الیزابت هلمز، ۲۰۱۶", by:"Tali Mackay", lic:"CC BY-SA 4.0",
+  page:"commons.wikimedia.org/wiki/File:Elizabeth_Holmes_2016.jpeg"},
+ {file:"board-2013.jpg", fa:"نشست ۲۰۱۳، در کنار ویلیام پری و اشتون کارتر", by:"OSD / US Dept. of Defense", lic:"مالکیت عمومی",
+  page:"commons.wikimedia.org/wiki/File:Ashton_B._Carter,_William_Perry,_and_Elizabeth_Holmes_-_130417-D-NI589-215_(8660144172).jpg"},
+ {file:"deals-walgreens.jpg", fa:"فروشگاه والگرینز", by:"time anchor", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:Local_markets_nlv_walgreens_storefront_2_(5956425119).jpg"},
+ {file:"machine-analyzer.jpg", fa:"یک تحلیلگر آزمایشگاهی متعارف", by:"Dorie Hightower", lic:"مالکیت عمومی",
+  page:"commons.wikimedia.org/wiki/File:Protein_pattern_analyzer_(1).jpg"},
+ {file:"probe-carreyrou.jpg", fa:"جان کری‌رو، خبرنگار وال استریت ژورنال", by:"kellywritershouse", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:John_Carreyrou_9-12-2019_DSC02013_(48724580882)_(cropped).jpg"},
+ {file:"witness-shultz.jpg", fa:"تایلر شولتز، کارمند پیشین ترانوس", by:"Jay Dixit", lic:"CC BY-SA 4.0",
+  page:"commons.wikimedia.org/wiki/File:Tyler_Shultz_at_the_International_Journalism_Festival_2024_in_Perugia,_Italy,_photo_2.jpg"},
+ {file:"collapse-holmes.jpg", fa:"الیزابت هلمز در تک‌کرانچ دیسروپت ۲۰۱۴", by:"Kevin Krejci", lic:"CC BY 2.0",
+  page:"commons.wikimedia.org/wiki/File:Elizabeth_Holmes_of_Theranos_(15186113882).jpg"},
+ {file:"reckoning-doj.jpg", fa:"ساختمان وزارت دادگستری آمریکا", by:"Gunnar Klack", lic:"CC BY-SA 4.0",
+  page:"commons.wikimedia.org/wiki/File:2014-04-04-Robert-F-Kennedy-Department-of-Justice-Building-Washington-DC.jpg"},
+ {file:"sentence-prison.jpg", fa:"اردوگاه زندان فدرال برایان، تگزاس", by:"عکاس اداره زندان‌های فدرال آمریکا", lic:"مالکیت عمومی",
+  page:"commons.wikimedia.org/wiki/File:FPC_Bryan.jpg"},
+ {file:"patients-needle.jpg", fa:"لوله‌های نمونه خون (تصویر نمادین)", by:"US Marine Corps / Cpl. Daniel Childs", lic:"مالکیت عمومی",
+  page:"commons.wikimedia.org/wiki/File:Koa_Moana_24-_Blood_Draw_SME_Exchange_(8583256).jpg"}
+];
+
+const SLIDES = [
+/* ۱ ------------------------------------------------------------------ */
+{section:"پرونده", type:"cover",
+ nameplate:"قطره خونی به قیمت ۹ میلیارد دلار",
+ sub:"ترانوس / الیزابت هلمز / داستان یک وعده درباره یک قطره خون",
+ head:"نوجوانی ۱۹ ساله همه‌چیز را وعده داد.<br><em>دستگاه هرگز کار نکرد.</em>",
+ lead:"در سال ۲۰۰۳ الیزابت هلمز دانشگاه استنفورد را رها کرد تا دستگاهی بسازد که با یک خراش انگشت، صدها آزمایش پزشکی انجام دهد. ده سال بعد ارزش شرکت ۹ میلیارد دلار بود. اما دستگاه نمی‌توانست همان کاری را بکند که می‌فروخت.",
+ photo:{src:"media/cover-holmes.jpg", cap:"الیزابت هلمز در صحنه تک‌کرانچ دیسروپت، سپتامبر ۲۰۱۴.", by:"عکس: Max Morse / TechCrunch، CC BY 2.0"},
+ foot:"منابع: وزارت دادگستری، SEC، CMS، وال استریت ژورنال، اداره زندان‌ها، سپتامبر ۲۰۲۶"},
+
+/* ۲ ------------------------------------------------------------------ */
+{section:"وعده", type:"lead", kicker:"۲۰۰۳ / پالو آلتو، کالیفرنیا",
+ head:"ایده‌ای که ممکن نبود، و استادی که همان را گفت",
+ lead:"هلمز طرحش را برای انجام صدها آزمایش با چند قطره خون از نوک انگشت با <b>فیلیس گاردنر</b>، استاد پزشکی استنفورد، در میان گذاشت. گاردنر گفت این کار شدنی نیست و چند استاد پزشکی دیگر هم همین را گفتند. هلمز رها نکرد و به جای آن‌ها سراغ رئیسی رفت که حمایتش کند.",
+ pull:{n:"۲۰۰۳", l:"سال رها کردن استنفورد و تأسیس شرکت"},
+ photo:{src:"media/promise-2016.jpg", cap:"الیزابت هلمز در ۲۰۱۶، سالی که تصویر عمومی‌اش فرو ریخت.", by:"عکس: Tali Mackay، CC BY-SA 4.0"},
+ side:[
+  {lbl:"تأسیس", txt:"نام اول شرکت <b>ریل-تایم کیورز</b> بود و بعد به ترانوس تغییر کرد، از ترکیب درمان و تشخیص. سرمایه اولیه از پول شهریه‌اش آمد."},
+  {lbl:"وعده", txt:"بدون سوزن، بدون آزمایشگاه، بدون انتظار: صدها آزمایش با یک خراش انگشت، ارزان‌تر از هر آزمایشگاهی."}
+ ],
+ foot:"منابع: ویکی‌پدیا (الیزابت هلمز)، کتاب Bad Blood"},
+
+/* ۳ ------------------------------------------------------------------ */
+{section:"وعده", type:"lead", kicker:"۲۰۰۴ تا ۲۰۱۳ / حالت پنهان",
+ head:"ده سال در تاریکی، و هیئت مدیره‌ای که نظیر نداشت",
+ lead:"ترانوس تا سپتامبر ۲۰۱۳ بدون بیانیه رسانه‌ای و بدون وب‌سایت کار می‌کرد. در همان سال‌ها پول و اسم جمع می‌کرد: <b>۶ میلیون دلار</b> تا دسامبر ۲۰۰۴، بیش از <b>۹۲ میلیون دلار</b> سرمایه تا پایان ۲۰۱۰، و هیئت مدیره‌ای از وزیران پیشین که هیچ‌کدام آزمایشگاه ندیده بودند.",
+ pull:{n:"۹۲ میلیون دلار", l:"سرمایه جمع‌شده تا پایان ۲۰۱۰، پیش از عرضه هر محصولی"},
+ photo:{src:"media/board-2013.jpg", cap:"نشستی در ۲۰۱۳ با حضور ویلیام پری، عضو هیئت مدیره ترانوس، و اشتون کارتر.", by:"عکس: وزارت دفاع آمریکا، مالکیت عمومی"},
+ side:[
+  {lbl:"هیئت مدیره", txt:"جورج شولتز، هنری کیسینجر، ویلیام پری، سام نان، بیل فرست، گری روگهد، جیمز متیس، ویلیام فوگه، رایلی بکتل، ریچارد کواچویچ، دیوید بویز."},
+  {lbl:"آنچه نداشت", txt:"هیچ عضو، تجربه پزشکی آزمایشگاهی نداشت. مشاور فنی، رئیس دانشکده مهندسی شیمی استنفورد بود."}
+ ],
+ foot:"منابع: ویکی‌پدیا (ترانوس)، وال استریت ژورنال"},
+
+/* ۴ ------------------------------------------------------------------ */
+{section:"پول", type:"numbers", kicker:"۲۰۱۳ تا ۲۰۱۶ / ارزش این داستان",
+ head:"این داستان چقدر می‌ارزید",
+ nums:[
+  {n:"۹۴۵ میلیون", l:"دلار، جمع‌شده از سرمایه‌گذاران", body:"به گفته کمیسیون بورس آمریکا بیش از <b>۷۰۰ میلیون دلار</b> آن با ادعاهای نادرست یا اغراق‌شده جمع شده است.", s:"کیفرخواست SEC، مارس ۲۰۱۸"},
+  {n:"۹ میلیارد", l:"دلار، ارزش اوج در ۲۰۱۳ و ۲۰۱۴", body:"شرکتی خصوصی، بدون داده منتشرشده، بدون پژوهش داوری‌شده و با یک آزمایش تأییدشده.", s:"فوربس، ۲۰۱۳ تا ۲۰۱۵"},
+  {n:"۴.۵ میلیارد", l:"دلار، دارایی اسمی هلمز در ۲۰۱۵", body:"فوربس او را جوان‌ترین و ثروتمندترین میلیاردر زن خودساخته آمریکا نامید.", s:"فوربس، ۲۰۱۵"},
+  {n:"صفر", l:"همان دارایی، ژوئن ۲۰۱۶", body:"فوربس آن رقم را صفر کرد. وال استریت ژورنال بعداً نوشت هزینه این ماجرا برای رهبران تجاری و دولتی <b>بیش از ۶۰۰ میلیون دلار</b> بوده است.", s:"فوربس ژوئن ۲۰۱۶، WSJ مه ۲۰۱۸"}
+ ],
+ foot:"منابع: کیفرخواست SEC، فوربس، وال استریت ژورنال (مه ۲۰۱۸)"},
+
+/* ۵ ------------------------------------------------------------------ */
+{section:"وعده", type:"lead", kicker:"۲۰۱۳ تا ۲۰۱۵ / قراردادها",
+ head:"قراردادهایی که ماجرا را واقعی جلوه داد",
+ lead:"والگرینز بیش از <b>۴۰ پیشخوان</b> نمونه‌گیری ترانوس را داخل فروشگاه‌هایش گذاشت. سیف‌وی <b>۳۵۰ میلیون دلار</b> خرج بازسازی ۸۰۰ شعبه کرد؛ کلینیک‌هایی که هرگز استفاده نشد. کلینیک کلیولند، کپیتال بلو کراس و امری‌هلث کریتاس هم قرارداد بستند. از گلاکسواسمیت‌کلاین و فایزر به عنوان کاربران این فناوری نام برده می‌شد؛ در اکتبر ۲۰۱۵ هر دو گفتند هیچ پروژه فعالی با ترانوس ندارند.",
+ pull:{n:"۳۵۰ میلیون دلار", l:"خرج سیف‌وی برای کلینیک‌هایی در ۸۰۰ شعبه که هرگز استفاده نشد"},
+ photo:{src:"media/deals-walgreens.jpg", cap:"یک شعبه والگرینز؛ ترانوس در بیش از ۴۰ فروشگاه پیشخوان نمونه‌گیری گذاشت.", by:"عکس: time anchor، CC BY 2.0"},
+ side:[
+  {lbl:"مشتری به جای سند", txt:"این قراردادها به عنوان تأیید مستقل گزارش می‌شدند، در حالی که هیچ‌کدام شامل راستی‌آزمایی مستقل دستگاه‌ها نبود."},
+  {lbl:"کلینیک آزمایشی", txt:"کلینیک آزمایشی خود سیف‌وی نتایج مشکوک می‌داد؛ قرارداد در ۲۰۱۵ فسخ شد."}
+ ],
+ foot:"منابع: ویکی‌پدیا (ترانوس)، وال استریت ژورنال"},
+
+/* ۶ ------------------------------------------------------------------ */
+{section:"دستگاه", type:"columns", kicker:"در آن جعبه واقعاً چه بود",
+ head:"یک دستگاه، یک آزمایش تأییدشده، و کلی دستگاه دیگران",
+ cols:[
+  {k:"ادعا", h:"صدها آزمایش با چند میکرولیتر خون", p:"دستگاه ادیسون، که بعداً مینی‌لب نام گرفت، یک آزمایشگاه کامل معرفی می‌شد: سریع‌تر، ارزان‌تر و دقیق‌تر از آزمایشگاه مرجع.", p2:"ده سال گذشت و هیچ پژوهش داوری‌شده‌ای درباره این دستگاه منتشر نشد؛ جان یوانیدیس در فوریه ۲۰۱۵ در جاما همین شکاف را نوشت."},
+  {k:"واقعیت", h:"بیشتر آزمایش‌ها با دستگاه‌های شرکت‌های دیگر", p:"وال استریت ژورنال در اکتبر ۲۰۱۵ نوشت ترانوس برای بیشتر آزمایش‌هایش از دستگاه‌های متعارف خریداری‌شده استفاده می‌کند. در مه ۲۰۱۶ شرکت نتایج <b>دو سال</b> از دستگاه ادیسون را باطل کرد.", p2:"ژورنال همچنین از گزارش‌های اعتبارسنجی دستکاری‌شده نوشت، و ترانوس حدود یک درصد نتایج را در کل شرکت باطل یا اصلاح کرد."},
+  {k:"تنها تأیید", h:"HSV-1 و هیچ چیز دیگر", p:"در جولای ۲۰۱۵ سازمان غذا و دارو استفاده از دستگاه خراش انگشت را بیرون از آزمایشگاه فقط برای یک مورد تأیید کرد: <b>ویروس هرپس سیمپلکس نوع یک</b>.", p2:"فهرست دویست‌وخرده‌ای آزمایش هرگز چنین تأییدی نگرفت؛ بقیه با دستگاه‌های متعارف و نمونه‌های رقیق‌شده انگشتی انجام می‌شد."},
+  {k:"نمایش", h:"آزمایشگاهی که برای یک بازدید آراسته شد", p:"وقتی جو بایدن، معاون رئیس‌جمهور وقت، از ساختمان بازدید کرد، کارمندان از <b>آزمایشگاهی ساختگی</b> برای آن بازدید گفتند.", p2:"یک شکایت سرمایه‌گذاری هم مدعی شد شرکت مخفیانه تجهیزات آزمایشگاهی خرید تا نمایش‌های ساختگی برگزار کند."}
+ ],
+ photo:{src:"media/machine-analyzer.jpg", cap:"یک تحلیلگر آزمایشگاهی متعارف؛ بیشتر نتایج ترانوس روی دستگاه‌هایی از این دست اجرا می‌شد.", by:"عکس: Dorie Hightower، مالکیت عمومی"},
+ strip:{t:"ترانوس گزارش ژورنال را از نظر واقعیت و علم نادرست خواند و قول داد داده دقت آزمایش‌ها را منتشر کند؛ آن داده هرگز نیامد.", w:"بیانیه شرکت، اکتبر ۲۰۱۵"},
+ foot:"منابع: WSJ (اکتبر ۲۰۱۵)، FDA، ویکی‌پدیا، کتاب Bad Blood"},
+
+/* ۷ ------------------------------------------------------------------ */
+{section:"نقطه شکست", type:"quote", kicker:"۱۵ اکتبر ۲۰۱۵",
+ quote:"وقتی برای تغییر دادن چیزی کار می‌کنی همیشه همین می‌شود: اول دیوانه‌ات می‌دانند، بعد با تو می‌جنگند، و بعد یک‌دفعه دنیا را تغییر می‌دهی.",
+ who:"الیزابت هلمز در برنامه Mad Money شبکه CNBC",
+ when:"شبی که گزارش روزنامه منتشر شد",
+ tl:[
+  {yr:"فوریه ۲۰۱۵", tx:"جان یوانیدیس در جاما می‌نویسد هیچ پژوهش داوری‌شده‌ای از ترانوس در ادبیات پزشکی وجود ندارد."},
+  {yr:"مه ۲۰۱۵", tx:"الفتِریوس دیاماندیس از دانشگاه تورنتو نتیجه می‌گیرد بیشتر ادعاهای شرکت اغراق‌شده است."},
+  {yr:"۱۵ اکتبر ۲۰۱۵", tx:"وال استریت ژورنال گزارش جان کری‌رو را منتشر می‌کند. والگرینز بلافاصله توسعه را متوقف می‌کند."}
+ ],
+ foot:"منابع: جاما، وال استریت ژورنال، ویکی‌پدیا"},
+
+/* ۸ ------------------------------------------------------------------ */
+{section:"نقطه شکست", type:"lead", kicker:"۲۰۱۵ / ماجرا چگونه رو شد",
+ head:"یک سرنخ، دو افشاگر، و وکیلی برای متوقف کردن آن",
+ lead:"کری‌رو تحقیق چندماهه‌اش را با سرنخی شروع کرد که دستگاه ادیسون مشکوک به نظر می‌رسید و آن را با اسناد داخلی شرکت و دو کارمند پیشین کامل کرد: <b>تایلر شولتز</b>، نوه جورج شولتز عضو هیئت مدیره، و <b>اریکا چنگ</b> که در آزمایشگاه کار می‌کرد. وقتی دیوید بویز، وکیل هلمز، از تحقیق باخبر شد، ترانوس با تهدید حقوقی و مالی سراغ ژورنال، منابع و افشاگران رفت. گزارش با این حال منتشر شد.",
+ pull:{n:"۱۵ اکتبر", l:"۲۰۱۵، تاریخی که وال استریت ژورنال گزارش تحقیق را منتشر کرد"},
+ photo:{src:"media/probe-carreyrou.jpg", cap:"جان کری‌رو، خبرنگاری که تحقیق را نوشت.", by:"عکس: kellywritershouse، CC BY 2.0"},
+ side:[
+  {lbl:"ادعای دیگر", txt:"ترانوس شرکتی را استخدام کرد که تلاش کرد گزارش ژورنال را بی‌سروصدا از مقاله ویکی‌پدیای خودش حذف کند."},
+  {lbl:"پاسخ", txt:"هلمز ژورنال را زرد خواند و قول داد داده دقت آزمایش‌ها را منتشر کند. آن داده نیامد."}
+ ],
+ foot:"منابع: WSJ، کتاب Bad Blood، ویکی‌پدیا (ترانوس)"},
+
+/* ۹ ------------------------------------------------------------------ */
+{section:"فروپاشی", type:"numbers", kicker:"مه ۲۰۱۶ / آنچه پس گرفته شد",
+ head:"چه چیزی باطل شد",
+ nums:[
+  {n:"۲ سال", l:"نتایج دستگاه ادیسون که در مه ۲۰۱۶ باطل شد", body:"به بیمارانی که نتیجه‌شان از دستگاه خود شرکت آمده بود گفته شد دیگر نمی‌توان به آن نتیجه اعتماد کرد.", s:"بیانیه شرکت، مه ۲۰۱۶"},
+  {n:"۱ درصد", l:"نتایج باطل یا اصلاح‌شده در کل شرکت", body:"عددی که خود ترانوس در ژوئن ۲۰۱۶ اعلام کرد، روی حجمی که در دو سال ساخته بود.", s:"بیانیه شرکت، ژوئن ۲۰۱۶"},
+  {n:"۱٫۵ میلیون", l:"آزمایش فروخته‌شده فقط در آریزونا", body:"ایالت مدعی شد ترانوس این آزمایش‌ها را فروخت در حالی که واقعیت‌های مهمی را پنهان یا وارونه جلوه داده بود.", s:"دادستانی آریزونا، ۲۰۱۷"},
+  {n:"۴.۶۵ میلیون", l:"دلار، توافق آریزونا در آوریل ۲۰۱۷", body:"بازپرداخت به مصرف‌کنندگان به‌همراه ۲۲۵ هزار دلار جریمه و هزینه حقوقی، با یک حکم رضایت‌نامه.", s:"توافق آریزونا، آوریل ۲۰۱۷"}
+ ],
+ foot:"منابع: WSJ، دادستانی آریزونا، ویکی‌پدیا (ترانوس)"},
+
+/* ۱۰ ----------------------------------------------------------------- */
+{section:"فروپاشی", type:"columns", kicker:"۲۰۱۶ تا ۲۰۱۸ / پایان",
+ head:"ناظر، محرومیت، و پایان شرکت",
+ cols:[
+  {k:"ژانویه ۲۰۱۶", h:"خطر فوری", p:"بازرسان CMS آزمایشگاه نیوارک کالیفرنیا را بررسی می‌کنند و می‌گویند این مرکز <b>خطر فوری برای سلامت و ایمنی بیماران</b> ایجاد کرده است؛ نمونه‌اش آزمایش تعیین دوز داروی ضدانعقاد وارفارین.", p2:"والگرینز چند روز بعد آزمایش در آن مرکز را معلق کرد و ترانوس پذیرفت در شعبه‌ای در پنسیلوانیا هم آزمایش را متوقف کند."},
+  {k:"جولای ۲۰۱۶", h:"مجوز باطل شد", p:"CMS مجوز CLIA آزمایشگاه را لغو می‌کند و هلمز را <b>دو سال</b> از مالکیت، اداره یا مدیریت هر مرکز آزمایش خون منع می‌کند.", p2:"سازمان غذا و دارو هم جداگانه دستور داد استفاده از دستگاه جمع‌آوری نمونه نانوتینر، یکی از اختراع‌های اصلی شرکت، متوقف شود."},
+  {k:"اکتبر ۲۰۱۶", h:"تعطیلی آزمایشگاه‌ها، اخراج ۳۴۰ نفر", p:"ترانوس آزمایشگاه‌ها و مراکز سلامت خود را می‌بندد. در ژانویه ۲۰۱۷، <b>۱۵۵ نفر</b> دیگر اخراج می‌شوند و آخرین مرکز آزمایش پس از شکست در دومین بازرسی بسته می‌شود.", p2:"تا آن زمان شرکت نتایج دو سال از دستگاه خودش را باطل کرده بود و دادستان‌های فدرال و SEC در حال تحقیق بودند."},
+  {k:"سپتامبر ۲۰۱۸", h:"انحلال", p:"شرکت رسماً منحل می‌شود و پول و دارایی باقی‌مانده به طلبکاران می‌رسد؛ اختراع‌ها به گروه سرمایه‌گذاری فورترس منتقل می‌شود.", p2:"کارمندان باقی‌مانده در اوت مرخص شدند و سهام‌داران هیچ‌چیز پس نگرفتند."}
+ ],
+ photo:{src:"media/collapse-holmes.jpg", cap:"هلمز در صحنه تک‌کرانچ دیسروپت ۲۰۱۴ در سان‌فرانسیسکو.", by:"عکس: Kevin Krejci، CC BY 2.0"},
+ strip:{t:"هلمز گفت داغون است که این ایرادها را زودتر پیدا و رفع نکرده‌اند و قول داد آزمایشگاه را با یک هیئت مشاوره علمی تازه بسازد.", w:"هلمز در برنامه امروز، ۲۰۱۶"},
+ foot:"منابع: CMS، WSJ، ویکی‌پدیا (ترانوس)"},
+
+/* ۱۱ ----------------------------------------------------------------- */
+{section:"فروپاشی", type:"chart", kicker:"۲۰۱۴ تا ۲۰۱۸ / حساب و کتاب",
+ head:"نه میلیارد دلار، و بعد صفر",
+ counterLabel:"ارزش شرکت، روی کاغذ، ۲۰۱۵",
+ bars:[
+  {v:9.0, lab:"۲۰۱۳ تا ۲۰۱۵<br>ارزش شرکت", show:"۹.۰ میلیارد"},
+  {v:0.0, lab:"ژوئن ۲۰۱۶<br>دارایی بنیان‌گذار", show:"صفر", hot:true},
+  {v:0.0, lab:"سپتامبر ۲۰۱۸<br>بازگشت سرمایه سهام‌داران", show:"صفر", hot:true}
+ ],
+ note:"آ ن ۹ میلیارد دلار یک ارزش‌گذاری خصوصی بود، نه پول نقد. ضرر واقعی نقدی بود: شرکا، کارمندان و سرمایه‌گذاران بابت دستگاهی پول دادند که هرگز اعتبارسنجی نشد. سهام در زمان انحلال هیچ ارزشی نداشت.",
+ foot:"منابع: SEC، فوربس، WSJ، مارکت‌واچ (معامله فورترس، سپتامبر ۲۰۱۸)"},
+
+/* ۱۲ ----------------------------------------------------------------- */
+{section:"حساب‌خواهی", type:"lead", kicker:"مارس و ژوئن ۲۰۱۸",
+ head:"اول SEC اسمش را کلاهبرداری گذاشت، بعد وزارت دادگستری",
+ lead:"در مارس ۲۰۱۸ کمیسیون بورس و اوراق بهادار آمریکا هلمز و بالوانی را متهم کرد که با ادعاهای نادرست بیش از <b>۷۰۰ میلیون دلار</b> از سرمایه‌گذاران گرفته‌اند؛ از جمله اینکه این فناوری در محیط جنگی به دست وزارت دفاع استفاده می‌شود و شرکت در ۲۰۱۴ صد میلیون دلار درآمد خواهد داشت، در حالی که درآمد واقعی حدود <b>صد هزار دلار</b> بود. هلمز بدون پذیرش یا رد اتهام توافق کرد: <b>۵۰۰ هزار دلار</b> جریمه، بازگرداندن ۱۸.۹ میلیون سهم، و ده سال ممنوعیت از مدیرعاملی یا عضویت هیئت مدیره در شرکت‌های عمومی.",
+ pull:{n:"۷۰۰ میلیون", l:"دلار که به گفته SEC با ادعاهای نادرست جمع شده بود"},
+ photo:{src:"media/reckoning-doj.jpg", cap:"ساختمان وزارت دادگستری آمریکا در واشینگتن.", by:"عکس: Gunnar Klack، CC BY-SA 4.0"},
+ side:[
+  {lbl:"۱۴ ژوئن ۲۰۱۸", txt:"هیئت منصفه فدرال هلمز و بالوانی را به <b>نُه فقره کلاهبرداری بانکی و دو فقره تبانی</b> متهم می‌کند. هر دو اتهام را رد کردند."},
+  {lbl:"دو طرح", txt:"یکی برای فریب سرمایه‌گذاران و یکی برای فریب پزشکان و بیماران."}
+ ],
+ foot:"منابع: SEC (مارس ۲۰۱۸)، وزارت دادگستری (ژوئن ۲۰۱۸)"},
+
+/* ۱۳ ----------------------------------------------------------------- */
+{section:"حساب‌خواهی", type:"columns", kicker:"اوت تا دسامبر ۲۰۲۱ / سن‌خوزه",
+ head:"محاکمه",
+ cols:[
+  {k:"دادستان", h:"نمایش‌های ساختگی، گزارش‌های دستکاری‌شده", p:"پرونده شامل نمایش‌های ساختگی، <b>گزارش‌های اعتبارسنجی جعلی</b>، ادعاهای گمراه‌کننده درباره قراردادها و صورت‌های مالی متورم بود. دو طرح: سرمایه‌گذاران، و پزشکان و بیماران.", p2:"چهار فقره از یازده فقره به بیماران مربوط بود و بقیه به سرمایه‌گذاران."},
+  {k:"دفاع", h:"هفت روز روی جایگاه شهادت", p:"هلمز هفت روز به نفع خودش شهادت داد: گفت کارمندان درباره فناوری به او دروغ گفته‌اند و بالوانی در رابطه پنهانشان بر او سلطه داشته است.", p2:"وکلایش استدلال کردند دولت ثابت نکرده او قصد فریب داشته و شکست‌ها عملیاتی بوده، نه کیفری."},
+  {k:"شاهدان", h:"خبرنگار، کارمندان آزمایشگاه، بیماران", p:"جان کری‌رو، اریکا چنگ، تایلر شولتز، مدیران آزمایشگاه و بیماران شهادت دادند. قاضی پرونده ادوارد داویلا بود.", p2:"جلسه‌ها در دادگاه فدرال سن‌خوزه برگزار شد و توجه رسانه‌های جهان را جلب کرد."},
+  {k:"تعویق", h:"بیش از یک سال تأخیر", p:"همه‌گیری کرونا و بارداری هلمز محاکمه را عقب انداخت و سرانجام <b>۳۱ اوت ۲۰۲۱</b> آغاز شد، با جمع‌بندی نهایی در دسامبر.", p2:"هلمز ژوئیه ۲۰۲۱ اولین فرزندش را به دنیا آورد و چند هفته بعد محاکمه آغاز شد."}
+ ],
+ photo:{src:"media/witness-shultz.jpg", cap:"تایلر شولتز، کارمند پیشین ترانوس و نوه جورج شولتز، در جشنواره بین‌المللی روزنامه‌نگاری ۲۰۲۴.", by:"عکس: Jay Dixit، CC BY-SA 4.0"},
+ strip:{t:"هیئت منصفه او را در فقره‌های سرمایه‌گذاری مجرم شناخت و در همه فقره‌های مربوط به بیماران تبرئه کرد.", w:"رأی، ۳ ژانویه ۲۰۲۲"},
+ foot:"منابع: وزارت دادگستری، پرونده دادگاه، گزارش‌های AP و رویترز"},
+
+/* ۱۴ ----------------------------------------------------------------- */
+{section:"رأی", type:"verdict", kicker:"۳ ژانویه ۲۰۲۲ / چهار فقره از یازده",
+ head:"در چهار فقره مجرم شناخته شد",
+ rows:[
+  {ch:"کلاهبرداری بانکی علیه سرمایه‌گذاران", cn:"۳ فقره", v:"مجرم", kind:"guilty"},
+  {ch:"تبانی برای کلاهبرداری بانکی", cn:"۱ فقره", v:"مجرم", kind:"guilty"},
+  {ch:"کلاهبرداری علیه بیماران", cn:"۴ فقره", v:"تبرئه", kind:"plain"},
+  {ch:"سایر فقره‌های سرمایه‌گذاری", cn:"۳ فقره", v:"رأی نگرفت", kind:"grey"}
+ ],
+ note:"بالوانی در جولای ۲۰۲۲ در همه ۱۲ فقره محکوم شد. هلمز به ۱۱ سال و ۳ ماه زندان محکوم شد و هر دو مکلف به پرداخت ۴۵۲ میلیون دلار غرامت شدند.",
+ foot:"منابع: وزارت دادگستری، برگه رأی، AP"},
+
+/* ۱۵ ----------------------------------------------------------------- */
+{section:"حکم", type:"lead", kicker:"۱۸ نوامبر ۲۰۲۲",
+ head:"۱۳۵ ماه، و صورت‌حسابی ۴۵۲ میلیون دلاری",
+ lead:"قاضی داویلا هلمز را به <b>۱۱ سال و ۳ ماه</b> زندان فدرال به‌همراه سه سال آزادی تحت نظر محکوم کرد و او و بالوانی را مشترکاً به پرداخت <b>۴۵۲ میلیون دلار</b> غرامت به قربانیان کلاهبرداری ملزم کرد. وکلایش ۱۸ ماه حبس خانگی خواسته بودند؛ دادگاه نپذیرفت و او ملزم به معرفی خودش شد.",
+ pull:{n:"۱۳۵ ماه", l:"زندان فدرال، به‌همراه سه سال آزادی تحت نظر"},
+ photo:{src:"media/sentence-prison.jpg", cap:"اردوگاه زندان فدرال برایان در تگزاس؛ جایی که هلمز دوران محکومیتش را می‌گذراند.", by:"عکس: اداره زندان‌های فدرال آمریکا، مالکیت عمومی"},
+ side:[
+  {lbl:"هم‌متهمش", txt:"بالوانی در ۷ دسامبر ۲۰۲۲ به <b>۱۵۵ ماه</b> (۱۲ سال و ۱۱ ماه) زندان و سه سال آزادی تحت نظر محکوم شد؛ او در همه ۱۲ فقره مجرم شناخته شده بود."},
+  {lbl:"تحویل خود", txt:"هلمز در ۳۰ مه ۲۰۲۳ خودش را به اردوگاه زندان فدرال برایان در تگزاس معرفی کرد. شماره زندانی: ۲۴۹۶۵-۱۱۱."}
+ ],
+ foot:"منابع: وزارت دادگستری (نوامبر و دسامبر ۲۰۲۲)، اداره زندان‌ها"},
+
+/* ۱۶ ----------------------------------------------------------------- */
+{section:"هزینه", type:"lead", kicker:"آسیب کجا نشست",
+ head:"بیماران هیچ‌وقت در رأی نبودند",
+ lead:"هلمز در همه فقره‌های مربوط به بیماران تبرئه شد، اما آسیب به بیماران به همان شکل در ترازو نبود. <b>دو سال نتایج دستگاه ادیسون باطل شد</b> و به بیماران گفته شد دوباره آزمایش بدهند. آریزونا مدعی شد <b>۱.۵ میلیون آزمایش</b> در این ایالت فروخته شد در حالی که واقعیت‌های مهم پنهان ماند. داخل شرکت، کارمندانی که نگرانی مطرح کردند به حاشیه رانده یا اخراج شدند و ایان گیبونز، دانشمند ارشد، در ۲۰۱۳ پس از بازجویی در یک پرونده حقوقی مربوط به نقشش به زندگی خود پایان داد.",
+ pull:{n:"۲ سال", l:"نتایجی که باطل شد و بیماران را به آزمایش دوباره فرستاد"},
+ photo:{src:"media/patients-needle.jpg", cap:"لوله‌های نمونه خون؛ تصویر نمادین، نه بیمار واقعی.", by:"عکس: تفنگداران دریایی آمریکا، مالکیت عمومی"},
+ side:[
+  {lbl:"بخش ناجور", txt:"ترانوس مکلف شد نتایج را باطل و اصلاح کند و هزینه آزمایش دوباره را بدهد: راه‌حلی برای پرونده، نه حکمی درباره بیماران."},
+  {lbl:"حجم", txt:"در اوج ۲۰۱۵ بیش از ۸۰۰ نفر در ترانوس کار می‌کردند. تا آوریل ۲۰۱۸ کمتر از دو جین نفر مانده بود."}
+ ],
+ foot:"منابع: WSJ، دادستانی آریزونا، جاما، ویکی‌پدیا"},
+
+/* ۱۷ ----------------------------------------------------------------- */
+{section:"بعد از آن", type:"timeline", kicker:"۲۰۲۳ تا ۲۰۲۶ / امروز",
+ head:"الان کجاست",
+ items:[
+  {yr:"۲۰۲۳", hot:true, h:"معرفی به زندان", tx:"۳۰ مه: هلمز خودش را به اردوگاه زندان فدرال برایان در تگزاس معرفی کرد تا ۱۳۵ ماه را بگذراند."},
+  {yr:"۲۰۲۵", h:"نخستین مصاحبه از زندان", tx:"فوریه: به مجله پیپل گفت این دوران جهنم و شکنجه بوده است و بر بی‌گناهی‌اش پافشاری کرد."},
+  {yr:"۲۰۲۶", h:"درخواست عفو", tx:"ژانویه: از دونالد ترامپ خواست حکمش را تخفیف دهد. درخواست در دفتر عفو وزارت دادگستری در انتظار است."},
+  {yr:"۲۰۲۶", hot:true, h:"کاهش حکم به ۱۲۳ ماه", tx:"۲۶ مارس: قاضی فدرال در سن‌خوزه حکم را کوتاه کرد و گفت هیچ سرمایه‌گذاری ناتوانی مالی خود را ثابت نکرده است."},
+  {yr:"۲۰۲۶", h:"آزادی تخمینی", tx:"اداره زندان‌ها آزادی او را ۲۲ فوریه ۲۰۳۰ پیش‌بینی کرده است. این تاریخ می‌تواند تغییر کند."},
+  {yr:"۲۰۲۶", hot:true, h:"بازگشت به تصویر", tx:"۶ سپتامبر: مستند A24 با نام You Can See Everything ساخته نیتن فیلدر و لنس اوپنهایم نخستین نمایشش را در جشنواره تلوراید داشت."}
+ ],
+ foot:"منابع: رویترز، AP، یواس‌ای تودی، بریتانیکا (مارس ۲۰۲۶)"},
+
+/* ۱۸ ----------------------------------------------------------------- */
+{section:"چه چیزی را باید دید", type:"closing", kicker:"هیچ‌کدام در ۲۰۱۵ پنهان نبود",
+ head:"شش چیز که در ۲۰۱۴ قابل دیدن بود",
+ items:[
+  {h:"بدون داده منتشرشده", p:"ده سال گذشت و علم آن هرگز داوری و منتشر نشد (یوانیدیس، جاما، فوریه ۲۰۱۵)."},
+  {h:"بدون راستی‌آزمایی مستقل", p:"هیئت مدیره‌ای بدون تجربه پزشکی آزمایشگاهی و دستگاهی که هرگز برای اعتبارسنجی بیرونی باز نشد."},
+  {h:"پنهان‌کاری به عنوان سیاست", p:"کارمندان نمی‌توانستند درباره کارشان با هم حرف بزنند. کسانی که نگرانی مطرح کردند به حاشیه رفتند یا اخراج شدند."},
+  {h:"داستان به جای نمایش", p:"سرمایه‌گذاران نمایش‌های صحنه‌سازی‌شده و گزارش‌های اعتبارسنجی دستکاری‌شده دیدند."},
+  {h:"مشتری به عنوان سند", p:"قرارداد والگرینز و سیف‌وی به جای تعهد، سندِ فناوری خوانده شد."},
+  {h:"عددی بدون منبع", p:"۱۰۰ میلیون دلار درآمد پیش‌بینی‌شده برای ۲۰۱۴ در برابر حدود ۱۰۰ هزار دلار درآمد واقعی."}
+ ],
+ foot:"تدوین ۲۶ شهریور ۱۴۰۵. منابع: وزارت دادگستری، SEC، CMS، وال استریت ژورنال، اداره زندان‌ها، رویترز، AP، یواس‌ای تودی، بریتانیکا."},
+
+/* ۱۹ ----------------------------------------------------------------- */
+{section:"اعتبار عکس‌ها", type:"credits", kicker:"تمام عکس‌ها از ویکی‌مدیای کامانز، با مجوز آزاد",
+ head:"اعتبار و مجوز تصویرها",
+ note:"همه عکس‌های این ارائه از ویکی‌مدیای کامانز برداشته شده و مجوز آزاد دارند. هر عکس با ذکر عکاس، مجوز و نشانی فایل اصلی آمده است. عکس لوله‌های نمونه خون نمادین است و به هیچ بیماری اشاره ندارد. هیچ عکسی ساخته هوش مصنوعی نیست."
+}
+];
+
+/* ======================= render ======================= */
+const pad2 = n => String(n).padStart(2,'0');
+const FA_D = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+const faDigits = s => String(s).replace(/[0-9]/g, d => FA_D[+d]);
+const RTL = true;                       /* this build reads right to left */
+const N = SLIDES.length;
+const stage = document.getElementById('stage');
+const titles = [];
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+function chrome(s, i, body){
+  const score = SCORE.map(x=>`<div><div class="n">${esc(x.n)}</div><div class="l">${esc(x.l)}</div></div>`).join('');
+  return `<div class="paper">
+    <div class="runhead"><span class="rh-sec">${esc(s.section)}</span><span class="rh-mid">قطره خونی به قیمت ۹ میلیارد دلار</span><span>شهریور ۱۴۰۵</span></div>
+    <div class="hr-ink"></div><div class="hr-thin"></div>
+    <div class="content">${body}</div>
+    <div class="boxscore">${score}</div>
+    <div class="pager"><span>${esc(s.foot||'')}</span><span class="pg">صفحه <b>${faDigits(pad2(i+1))}</b> از ${faDigits(N)}</span></div>
+  </div>`;
+}
+
+function cover(s){
+  return `<div class="paper" style="padding:34px 44px 30px">
+    <div class="runhead"><span class="rh-sec">پرونده</span><span class="rh-mid">${N} صفحه، یک پرونده</span><span>شهریور ۱۴۰۵</span></div>
+    <div style="text-align:center;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:9px 0 11px;margin-top:3px">
+      <div style="font-family:'Amiri',serif;font-weight:800;font-size:56px;line-height:1">${esc(s.nameplate)}</div>
+      <div style="font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.26em;text-transform:uppercase;color:#3b372f;margin-top:8px">${esc(s.sub)}</div>
+    </div>
+    <div class="hr-ink" style="height:3px;margin-bottom:16px"></div>
+    <div class="content covergrid" style="padding-top:0">
+      <div>
+        <h1 data-an style="--d:80;font-size:58px">${s.head}</h1>
+        <p class="standfirst" data-an style="--d:200;margin-top:18px;max-width:640px;font-size:19px">${s.lead}</p>
+      </div>
+      <div>
+        ${photoFig(s.photo, '', 250)}
+        <div data-an style="--d:300;border-top:3px solid var(--ink);padding-top:10px;margin-top:14px">
+          <div class="kicker">چهار عددی که مهم است</div>
+          ${SCORE.map((x,i)=>`<div data-an style="--d:${340+i*70};display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding:6px 0">
+            <span style="font-family:'Amiri',serif;font-weight:800;font-size:23px">${esc(x.n)}</span>
+            <span style="font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);text-align:end;max-width:210px">${esc(x.l)}</span></div>`).join('')}
+        </div>
+        <p class="note" data-an style="--d:640;margin-top:9px">هر عدد در همان صفحه منبع دارد و هر عکس در صفحه آخر اعتبارسنجی شده است.</p>
+      </div>
+    </div></div>
+    <div class="rail">${[['۱','وعده','یک رهاشده، یک دستگاه و یک هیئت مدیره'],
+      ['۲','پول','۹۴۵ میلیون دلار و آنچه خرید'],
+      ['۳','فروپاشی','نتایج باطل، مجوز لغوشده، شرکت منحل'],
+      ['۴','حساب‌خواهی','SEC، محاکمه، چهار فقره مجرم'],
+      ['۵','بعد از آن','۱۲۳ ماه، درخواست عفو، یک مستند']]
+      .map((r,i)=>`<div class="rb" data-an style="--d:${700+i*70}"><div class="i">${r[0]}</div>
+        <div class="t">${r[1]}</div><div class="d">${r[2]}</div></div>`).join('')}</div>
+    <div class="pager" style="margin-top:12px"><span>${esc(s.foot)}</span><span class="pg">صفحه <b>۰۱</b> از ${faDigits(N)}</span></div>
+  </div>`;
+}
+
+function lead(s, i){
+  const side = (s.side||[]).map((b,k)=>`<div class="blk" data-an style="--d:${340+k*90}">
+      <div class="lbl">${esc(b.lbl)}</div>
+      ${b.big!==undefined && b.big!=='' ? `<div class="big">${esc(b.big)}</div>`:''}
+      <div class="txt" style="margin-top:${b.big?'7px':'0'}">${b.txt}</div></div>`).join('');
+  return chrome(s,i,`<div class="split">
+    <div class="main">
+      <div class="kicker" data-an>${esc(s.kicker||'')}</div>
+      <h1 data-an style="--d:70">${s.head}</h1>
+      <div data-draw style="--d:180;height:12px;background:var(--ink);width:120px;margin:20px 0"></div>
+      <p class="standfirst" data-an style="--d:240">${s.lead}</p>
+      ${s.pull ? `<div class="pull" data-an style="--d:330"><span class="pn">${esc(s.pull.n)}</span><span class="pl">${esc(s.pull.l)}</span></div>` : ''}
+    </div>
+    <div class="side">${s.photo?photoFig(s.photo,"lead-photo",300):""}${side}</div>
+  </div>`);
+}
+
+function columns(s, i){
+  const cols = s.cols.map((c,k)=>`<div class="col" data-an style="--d:${180+k*90}">
+      <div class="kicker">${esc(c.k)}</div>
+      <h3>${esc(c.h)}</h3>
+      <div class="rule-soft" data-draw style="--d:${230+k*90}"></div>
+      <p class="body">${c.p}</p>
+      ${c.p2?`<p class="body" style="margin-top:7px">${c.p2}</p>`:''}</div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+      ${s.photo ? photoFig(s.photo, 'headphoto', 150)
+        : `<div class="statband" data-an style="--d:150">${(s.stats||[]).map(x=>
+            `<div class="sb"><div class="sbn">${esc(x.n)}</div><div class="sbl">${esc(x.l)}</div></div>`).join('')}</div>`}
+    </div>
+    <div class="hr-ink" data-draw style="--d:120;margin-bottom:14px"></div>
+    <div class="cols">${cols}</div>
+    ${s.strip?`<div class="strip" data-an style="--d:620"><span class="st">${esc(s.strip.t)}</span>
+      <span class="sw">${esc(s.strip.w)}</span></div>`:''}
+  </div>`);
+}
+
+function numbers(s, i){
+  const cells = s.nums.map((c,k)=>`<div class="cell" data-an style="--d:${160+k*90}">
+      <div class="n">${esc(c.n)}</div><div class="l">${esc(c.l)}</div>
+      <p class="body" style="margin-top:10px">${c.body}</p>
+      ${c.s?`<div class="csrc">source: ${esc(c.s)}</div>`:''}</div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div style="margin-bottom:6px"><div class="kicker" data-an>${esc(s.kicker||'')}</div>
+      <h2 data-an style="--d:70">${s.head}</h2></div>
+    <div class="hr-ink" data-draw style="--d:130;margin-bottom:10px"></div>
+    <div class="numbers">${cells}</div>
+  </div>`);
+}
+
+function quote(s, i){
+  const tl = (s.tl||[]).map((x,k)=>`<div class="it" data-an style="--d:${480+k*90}">
+      <div class="yr">${esc(x.yr)}</div><div class="bar" data-draw style="--d:${520+k*90}"></div>
+      <div class="tx">${x.tx}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="kicker" data-an>${esc(s.kicker||'')}</div>
+    <blockquote data-an style="--d:80;font-family:'Amiri',serif;font-style:italic;font-weight:700;
+      font-size:var(--t-quote);line-height:1.12;letter-spacing:-.01em;max-width:1180px">
+      &ldquo;${esc(s.quote)}&rdquo;</blockquote>
+    <div data-an style="--d:260;margin-top:22px;font-family:'Vazirmatn','Vazirmatn','PlexMono',monospace;font-size:var(--t-label);
+      letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)">
+      ${esc(s.who)} <span style="color:var(--ink3)">/ ${esc(s.when)}</span></div>
+    <div class="note" data-an style="--d:330;margin-top:auto;color:var(--red)">سه تاریخی که ماجرا را شکست</div>
+    <div class="hr-ink" data-draw style="--d:380;margin-top:8px"></div>
+    <div class="tl" style="padding-top:18px;height:auto">${tl}</div>
+  </div>`);
+}
+
+function verdict(s, i){
+  const rows = s.rows.map((r,k)=>`<tr data-an style="--d:${170+k*90}">
+      <td class="ch">${esc(r.ch)}</td><td class="cn">${esc(r.cn)}</td>
+      <td class="vd">${r.kind==='guilty'
+        ? `<span class="stamp" data-stamp style="--d:${300+k*90}">${esc(r.v)}</span>`
+        : `<span class="stamp ${r.kind}">${esc(r.v)}</span>`}</td></tr>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+      <div class="note" data-an style="--d:150">هفت فقره سرمایه‌گذاری سه قسمت شد: چهار مجرم و سه بی‌رأی. چهار فقره بیماران همه تبرئه شد. دادستان‌ها بعداً سه فقره بی‌رأی را رها کردند.</div>
+    </div>
+    <table class="tally"><thead><tr><th>اتهام</th><th>تعداد</th><th>رأی</th></tr></thead>
+      <tbody>${rows}</tbody></table>
+    <div class="strip" data-an style="--d:640;margin-top:auto">
+      <span class="st">${esc(s.note)}</span><span class="sw">بعد چه شد</span></div>
+    <div class="statband" style="margin-top:14px" data-an>
+      <div class="sb"><div class="sbn">۱۳۵ ماه</div><div class="sbl">هلمز، نوامبر ۲۰۲۲</div></div>
+      <div class="sb"><div class="sbn">۱۵۵ ماه</div><div class="sbl">بالوانی، همه ۱۲ فقره، دسامبر ۲۰۲۲</div></div>
+      <div class="sb"><div class="sbn">۴۵۲ میلیون دلار</div><div class="sbl">غرامت مشترک</div></div>
+      <div class="sb"><div class="sbn">۳۰ مه ۲۰۲۳</div><div class="sbl">روزی که خودش را به زندان معرفی کرد</div></div>
+    </div>
+  </div>`);
+}
+
+function timeline(s, i){
+  const items = s.items.map((x,k)=>`<div class="it${x.hot?' hot':''}" data-an style="--d:${150+k*80}">
+      <div class="yr">${esc(x.yr)}</div><div class="bar" data-draw style="--d:${190+k*80}"></div>
+      <h4>${esc(x.h)}</h4><div class="tx">${x.tx}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+    <div class="hr-ink" data-draw style="--d:130;margin-top:12px"></div>
+    <div class="tl">${items}</div>
+  </div>`);
+}
+
+function chart(s, i){
+  const bars = s.bars.map((b,k)=>`<div class="b${b.hot?' hot':''}">
+      <div class="val">${esc(b.show)}</div>
+      <div class="bar" data-draw-bar style="--h:${b.v===0?'3px':Math.round(b.v*26)+'px'};--d:${240+k*140}"></div>
+      <div class="lab">${b.lab}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2>
+        <p class="standfirst" data-an style="--d:150;margin-top:10px;max-width:640px">آن ۹ میلیارد دلار یک ارزش‌گذاری خصوصی بود، نه پول نقد. ضرر واقعی نقدی بود: شرکا، کارمندان و سرمایه‌گذاران بابت دستگاهی پول دادند که هرگز اعتبارسنجی نشد.</p></div>
+      <div data-an style="--d:140">
+        <div class="note" style="margin-bottom:6px">${esc(s.counterLabel)}</div>
+        <div class="counter" id="bigcount" data-cnt="0" data-from="9000000000" data-fmt="usd">$9,000,000,000</div>
+      </div>
+    </div>
+    <div class="hr-ink" data-draw style="--d:200;margin:12px 0 10px"></div>
+    <div class="chartgrid">
+      <div style="display:flex;flex-direction:column">
+        <div class="axis" style="flex:1;min-height:0;position:relative">
+          <div class="grid">سقف مقیاس: ۹.۰ میلیارد دلار</div>
+          <div class="plot" style="height:100%">${bars}</div>
+        </div>
+        <div class="note" style="margin-top:5px;display:flex;justify-content:space-between">
+          <span>خط پایه: صفر</span><span>بلندی هر ستون متناسب با عدد است</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;border-inline-start:1px solid var(--rule);padding-inline-start:32px">
+        <p class="body" data-an style="--d:420">${esc(s.note)}</p>
+        <div class="pull" data-an style="--d:520"><span class="pn">۴۵۲ میلیون دلار</span>
+          <span class="pl">غرامتی که هلمز و بالوانی باید بپردازند</span></div>
+      </div>
+    </div>
+  </div>`);
+}
+
+function closing(s, i){
+  const items = s.items.map((x,k)=>`<div data-an style="--d:${170+k*80};border-top:3px solid var(--ink);padding-top:9px">
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Amiri',serif;font-weight:800;font-size:30px;color:var(--red)">${k+1}</span>
+        <h4 style="font-family:'Vazirmatn',serif;font-weight:700;font-size:var(--t-h4);line-height:1.2">${esc(x.h)}</h4>
+      </div>
+      <p class="body" style="margin-top:6px">${x.p}</p></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div class="head-row">
+      <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+      <div class="note" data-an style="--d:140">کلاهبرداری به این بزرگی هیچ‌وقت یک دروغ زیرکانه نیست؛ شش عادت معمولی است که هیچ‌کس در آن اتاق پول نگرفته بود تا زیر سؤالشان ببرد.</div>
+    </div>
+    <div class="six" style="margin-top:6px">${items}</div>
+    <div class="srcbox" data-an style="--d:700;margin-top:auto">
+      <div class="sh">منابع همه اعداد این ارائه</div>
+      <p>وزارت دادگستری آمریکا، حوزه شمال کالیفرنیا: کیفرخواست (۱۴ ژوئن ۲۰۱۸)، صدور حکم هلمز (۱۸ نوامبر ۲۰۲۲)، صدور حکم بالوانی (۷ دسامبر ۲۰۲۲). کمیسیون بورس و اوراق بهادار آمریکا: اتهام و توافق (۱۴ مارس ۲۰۱۸). مرکز خدمات مدیکر و مدیکید: نامه‌های بازرسی ۲۰۱۵ و ۲۰۱۶، لغو مجوز CLIA و ممنوعیت دو ساله. وال استریت ژورنال: تحقیق جان کری‌رو (از ۱۵ اکتبر ۲۰۱۵) و تحلیل مه ۲۰۱۸ که هزینه این ماجرا برای رهبران تجاری و دولتی را بیش از ۶۰۰ میلیون دلار برآورد کرد. دادستانی آریزونا: شکایت ۲۰۱۷ و توافق ۲۰۱۷. اداره زندان‌های فدرال: اردوگاه برایان در تگزاس، شماره ۲۴۹۶۵-۱۱۱ و تاریخ تخمینی آزادی. رویترز (۲۱ ژانویه ۲۰۲۶)، AP، یواس‌ای تودی (۸ سپتامبر ۲۰۲۶)، بریتانیکا و بیزینس اینسایدر (مارس ۲۰۲۶) برای کاهش حکم، درخواست عفو و پیش‌بینی‌های کنونی. منابع مرجع: ویکی‌پدیا درباره ترانوس و الیزابت هلمز، بازیابی ۱۷ سپتامبر ۲۰۲۶.</p>
+      <p style="margin-top:8px">هیچ نقل‌قولی بازسازی نشده و هیچ دیالوگی ساخته نشده است. نقل‌قول‌های مستقیم به همان رسانه‌ای که آن‌ها را ثبت کرده نسبت داده شده‌اند. عکس‌ها با مجوز آزاد و با ذکر عکاس در صفحه آخر آمده‌اند. تدوین: ۲۶ شهریور ۱۴۰۵.</p>
+    </div>
+  </div>`);
+}
+
+/* a placed photograph: box aspect comes from the context class, framing from p.pos */
+function photoFig(p, cls, d){
+  if(!p) return '';
+  return `<figure class="photo ${cls||''}" data-an style="--d:${p.d||d||200}">
+    <img data-src="${p.src}" alt="${esc(p.alt||p.cap)}" style="object-position:${p.pos||'50% 50%'}">
+    <figcaption>${esc(p.cap)}${p.by?` <span class="cred">${esc(p.by)}</span>`:''}</figcaption></figure>`;
+}
+
+/* the credits sheet: every image with photographer, licence and source file page */
+function credits(s, i){
+  const cr = PHOTOS.map((p,k)=>`<div class="cr" data-an style="--d:${130+k*45}">
+      <div class="crc">${esc(p.en||p.fa||'')}</div>
+      <div class="crl">${esc(p.by)} / ${esc(p.lic)}</div>
+      <div class="crl">${esc(p.page)}</div></div>`).join('');
+  return chrome(s,i,`<div style="display:flex;flex-direction:column;height:100%">
+    <div><div class="kicker" data-an>${esc(s.kicker||'')}</div><h2 data-an style="--d:70">${s.head}</h2></div>
+    <div class="hr-ink" data-draw style="--d:120;margin:10px 0 14px"></div>
+    <div class="crgrid">${cr}</div>
+    <p class="note" data-an style="--d:680;margin-top:auto">${esc(s.note||'')}</p>
+  </div>`);
+}
+
+const RENDER = {cover, lead, columns, numbers, quote, verdict, timeline, chart, closing, credits};
+
+SLIDES.forEach((s,i)=>{
+  const el = document.createElement('section');
+  el.className = 'slide'; el.dataset.i = i;
+  el.innerHTML = (RENDER[s.type]||lead)(s,i);
+  stage.appendChild(el);
+  titles.push({sec:s.section, head:(s.head||s.nameplate||'').replace(/<[^>]+>/g,'')});
+});
+
+/* ======================= navigation ======================= */
+let cur = -1, flat = false, playing = false, ptimer = null, ppct = 0;
+const slides = Array.from(document.querySelectorAll('.slide'));
+const progfill = document.getElementById('progfill');
+const playbar = document.getElementById('playbar');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce) document.documentElement.classList.add('reduce');
+
+function fmt(v, kind){
+  if(kind==='usd') return faDigits(Math.round(v).toLocaleString('en-US')).replace(/,/g,'٬');
+  return faDigits(Math.round(v).toLocaleString('en-US')).replace(/,/g,'٬');
+}
+function runCounters(sl){
+  sl.querySelectorAll('[data-cnt]').forEach(el=>{
+    const to = parseFloat(el.dataset.cnt||'0');
+    const from = parseFloat(el.dataset.from||'0');
+    const kind = el.dataset.fmt;
+    if(reduce){ el.textContent = fmt(to,kind); el.classList.toggle('dead', to===0); return; }
+    const t0 = performance.now(), dur = 1400;
+    const step = t => {
+      const p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3);
+      const v = from + (to-from)*e;
+      el.textContent = fmt(v,kind);
+      if(p<1) requestAnimationFrame(step);
+      else { el.textContent = fmt(to,kind); el.classList.toggle('dead', to===0); }
+    };
+    requestAnimationFrame(step);
+  });
+}
+/* photos load when their page is reached, with one retry: firing every image at once over a slow
+   link loses some fetches, and Chrome then treats the failure as cached for that URL */
+function loadPhotos(sl){
+  sl.querySelectorAll('img[data-src]').forEach(img=>{
+    if(img.src) return;
+    img.addEventListener('error', ()=>{
+      if(img.dataset.retry) return;
+      img.dataset.retry = '1';
+      img.src = img.dataset.src + (img.dataset.src.includes('?') ? '&' : '?') + 'r=1';
+    });
+    img.src = img.dataset.src;
+  });
+}
+function warm(n){
+  const sl = slides[n]; if(!sl) return;
+  sl.querySelectorAll('img[data-src]').forEach(img=>{ if(!img.src){ const i = new Image(); i.src = img.dataset.src; } });
+}
+
+function show(n, push){
+  n = Math.max(0, Math.min(N-1, n));
+  if(n === cur) return;
+  if(cur >= 0){
+    const old = slides[cur];
+    old.classList.remove('on');
+    old.querySelectorAll('[data-cnt]').forEach(el=>{ el.classList.remove('dead'); });
+  }
+  cur = n;
+  const el = slides[cur];
+  el.classList.remove('on');
+  void el.offsetWidth;
+  el.classList.add('on');
+  el.scrollTop = 0;
+  loadPhotos(el);
+  warm(cur+1); warm(cur-1);
+  runCounters(el);
+  progfill.style.width = ((cur+1)/N*100).toFixed(2)+'%';
+  if(push !== false) history.replaceState(null,'','#'+(cur+1));
+  if(flat) toggleContents(false);
+  if(playing){ clearTimeout(ptimer); ppct = 0; tick(); }
+}
+function tick(){
+  if(!playing) return;
+  ppct += 50;
+  playbar.style.width = Math.min(100, ppct/14000*100)+'%';
+  if(ppct >= 14000){
+    if(cur === N-1){ setPlay(false); return; }
+    show(cur+1); return;
+  }
+  ptimer = setTimeout(tick, 50);
+}
+function setPlay(v){
+  playing = v; clearTimeout(ptimer);
+  if(v){ ppct = 0; tick(); } else { playbar.style.width = '0'; }
+}
+/* overlays */
+const ovContents = document.getElementById('contents'), ovHelp = document.getElementById('help');
+function toggleContents(v){
+  flat = (v === undefined) ? !flat : v;
+  ovContents.classList.toggle('on', flat);
+  if(flat){ setPlay(false); buildGrid(); }
+}
+document.getElementById('ovgrid').addEventListener('click', e=>{
+  const a = e.target.closest('a'); if(!a) return;
+  e.preventDefault(); show(parseInt(a.dataset.n,10));
+});
+function buildGrid(){
+  document.getElementById('ovgrid').innerHTML = titles.map((t,i)=>
+    `<a href="#${i+1}" data-n="${i}"><span class="no">${faDigits(pad2(i+1))}</span>
+      <span class="tt">${esc(t.head)}<i>${esc(t.sec)}</i></span></a>`).join('');
+}
+/* layout mode + fit */
+function fit(){
+  const vw = innerWidth, vh = innerHeight;
+  const scale = Math.min(vw / 1600, vh / 900);
+  /* a fixed 1600x900 canvas scaled below ~0.72 puts body copy under 11px, so narrow or
+     rotated viewports get the stacked (phone) layout instead of a shrunken broadsheet */
+  const land = (vw / vh) >= 1.02 && vw >= 700 && scale >= 0.72;
+  document.documentElement.classList.toggle('landscape', land);
+  document.documentElement.classList.toggle('portrait', !land);
+  if(land){
+    const s = Math.min(vw/1600, vh/900);
+    document.documentElement.style.setProperty('--fit', s.toFixed(4));
+  }
+}
+addEventListener('resize', ()=>{ fit(); });
+/* input */
+addEventListener('keydown', e=>{
+  const k = e.key;
+  if(k === 'Escape'){ toggleContents(false); ovHelp.classList.remove('on'); return; }
+  if(k === '?' || (k==='/' && e.shiftKey)){ ovHelp.classList.toggle('on'); setPlay(false); return; }
+  if(k === 'o' || k === 'O'){ toggleContents(); return; }
+  if(k === 'p' || k === 'P'){ setPlay(!playing); return; }
+  if(k === 'f' || k === 'F'){ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); return; }
+  const fwd = RTL ? 'ArrowLeft' : 'ArrowRight', back = RTL ? 'ArrowRight' : 'ArrowLeft';
+  if(k === fwd || k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'Enter'){ setPlay(false); show(cur+1); e.preventDefault(); return; }
+  if(k === back || k === 'ArrowUp' || k === 'PageUp' || k === 'Backspace'){ setPlay(false); show(cur-1); e.preventDefault(); return; }
+  if(k === 'Home'){ show(0); return; }
+  if(k === 'End'){ show(N-1); return; }
+});
+document.getElementById('zoneL').addEventListener('click', ()=>show(RTL ? cur+1 : cur-1));
+document.getElementById('zoneR').addEventListener('click', ()=>show(RTL ? cur-1 : cur+1));
+/* wheel with lockout */
+let wlock = 0;
+addEventListener('wheel', e=>{
+  const now = Date.now();
+  if(now - wlock < 700) return;
+  if(Math.abs(e.deltaY) < 12 && Math.abs(e.deltaX) < 12) return;
+  const d = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+  if(Math.abs(d) < 18) return;
+  wlock = now; setPlay(false); show(cur + (d>0?1:-1));
+}, {passive:true});
+/* swipe */
+let sx=0, sy=0, st=0;
+addEventListener('touchstart', e=>{ const t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; st=Date.now(); }, {passive:true});
+addEventListener('touchend', e=>{
+  const t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy, dt=Date.now()-st;
+  if(dt>900) return;
+  if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)*1.4){ setPlay(false); show(cur + (dx<0?1:-1)); } /* RTL: swipe left = next */
+}, {passive:true});
+/* boot */
+fit();
+const start = parseInt((location.hash||'').replace('#',''),10);
+show(isNaN(start) ? 0 : start-1);
+setTimeout(fit, 60);
+addEventListener('hashchange', ()=>{ const n = parseInt(location.hash.replace('#',''),10); if(!isNaN(n)) show(n-1, false); });
+</script>
+</body>
+</html>
